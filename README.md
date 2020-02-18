@@ -1,4 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Erik Irgens - Portfolio Website
+
+#### _This application is intended to provide myself with a portfolio solution for erikirgens.com._
+
+#### _By **Erik Irgens**_
+
+## Description
+
+This application is designed to accomplish the following, in short:
+
+1. Create a solution to market myself at erikirgens.com
+2. Teach myself to create a front-end solution from scratch, without the usage of third party UI frameworks
+
+## Component Tree Hierarchy
+
+![Component Tree Diagram](/public/Erik-Irgens-Portfolio.svg)
 
 ## Available Scripts
 
