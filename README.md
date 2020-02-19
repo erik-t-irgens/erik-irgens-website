@@ -15,6 +15,20 @@ This application is designed to accomplish the following, in short:
 
 ![Component Tree Diagram](/public/Erik-Irgens-Portfolio.svg)
 
+### Component definitions:
+
+1 - Welcome - This will serve as the introductory landing area for the webpage,with a brief description and a visual grab for viewers. 
+    * Starfield - A slightly interactable section which will contain stars and constellations as a visual grab.
+2 - Portfolio - This section will contain clickable elements that lead to github repositories or live sites, and hopefully will have some sort of i-frame for each. 
+3 - About - An about me section, potentially to be concatenated with the "Skills" section. 
+    * Image Carousel - Show off certain images that encompass me as a person.
+4 - Blog - A section that will contain clickable blog summaries that will lead to another site, with extensive blog articles that I've written. 
+5 - Skills - A section with infographics about my skills. Dependant on verbosity. 
+6 - Contact - A section with a box to email me directly. 
+7 - Header - A header with links that will scroll the user to the specified section (listed above)
+8 - Footer - Auxiliary links, such as LinkedIn, Facebook, Instagram, and GitHub. 
+
+
 ## Available Scripts
 
 In the project directory, you can run:
