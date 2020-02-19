@@ -8,9 +8,22 @@ class Button extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>Under Construction</h1>
-            </div>
+            <a href="#" class="button nav-link">
+
+                {/* <div class="bottom"></div> */}
+
+                <div class="top">
+
+                    <div class="label">{this.props.children}</div>
+
+                    <div class="button-border button-border-left"></div>
+                    <div class="button-border button-border-top"></div>
+                    <div class="button-border button-border-right"></div>
+                    <div class="button-border button-border-bottom"></div>
+
+                </div>
+
+            </a>
         );
     }
 }

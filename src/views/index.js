@@ -1,5 +1,6 @@
 import React from "react";
 import SectionWrapper from '../global/SectionWrapper'
+import Button from "../global/Button"
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -11,10 +12,11 @@ class MainPage extends React.Component {
     return (
       <div>
         <h1>Under Construction</h1>
-        <SectionWrapper color='black' />
+
+        <SectionWrapper color='black'> <Button>Click me pretty please</Button></SectionWrapper>
         <SectionWrapper color='white' />
         <SectionWrapper color='gray' />
-        <SectionWrapper color='red' />
+        <SectionWrapper color='red'><Button>Click me pretty please</Button></SectionWrapper>
       </div>
     );
   }
