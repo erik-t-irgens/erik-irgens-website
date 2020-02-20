@@ -1,5 +1,6 @@
 import React from "react";
 import SectionWrapper from '../global/SectionWrapper'
+import SectionTitle from '../global/SectionTitle'
 import Button from "../global/Button"
 import WelcomeSection from "./components/Welcome/index"
 import Image1 from "../Backgrounds/1.jpg"
@@ -27,16 +28,41 @@ class MainPage extends React.Component {
           <Button borderColor="white" labelColor="white" transitionColor="#42f5d1">Example Button</Button>
         </WelcomeSection>
         <SectionWrapper backgroundImage={Image11} transitionColor="orange" color='black'>
+          <SectionTitle color="white">About</SectionTitle>
           <Button borderColor="white" labelColor="white" transitionColor="orange">Example</Button>
         </SectionWrapper>
+
         <SectionWrapper backgroundImage={Image10} transitionColor="yellow" color='black'>
+          <SectionTitle color="white">Skills</SectionTitle>
           <Button borderColor="white" labelColor="white" transitionColor="yellow">Example</Button>
+
         </SectionWrapper>
+
         <SectionWrapper
           backgroundImage={Image9}
           transitionColor="red" color='black'
         >
+          <SectionTitle color="white">Portfolio</SectionTitle>
           <Button borderColor="white" labelColor="white" transitionColor="red">Example</Button>
+
+        </SectionWrapper>
+
+        <SectionWrapper
+          backgroundImage={Image8}
+          transitionColor="blue" color='black'
+        >
+          <SectionTitle color="white">Blog</SectionTitle>
+          <Button borderColor="white" labelColor="white" transitionColor="blue">Example</Button>
+
+        </SectionWrapper>
+
+        <SectionWrapper
+          backgroundImage={Image9}
+          transitionColor="green" color='black'
+        >
+          <SectionTitle color="white">Contact</SectionTitle>
+          <Button borderColor="white" labelColor="white" transitionColor="green">Example</Button>
+
         </SectionWrapper>
       </div>
     );
