@@ -7,19 +7,23 @@ class Button extends React.Component {
     }
 
     render() {
+        const buttonStyle = {
+            display: "inline-block",
+            textDecoration: "none",
+            position: "relative",
+            marginTop: "40px",
+        }
+
+
         return (
-            <a href="#" class="button nav-link">
+            <a href="#" className="button nav-link" style={buttonStyle}>
+                <div className="top" style={{ border: "2px solid " + this.props.borderColor, }}>
 
-                {/* <div class="bottom"></div> */}
-
-                <div class="top">
-
-                    <div class="label">{this.props.children}</div>
-
-                    <div class="button-border button-border-left"></div>
-                    <div class="button-border button-border-top"></div>
-                    <div class="button-border button-border-right"></div>
-                    <div class="button-border button-border-bottom"></div>
+                    <div className="label" style={{ color: this.props.labelColor }}>{this.props.children}</div>
+                    <div className="button-border button-border-left" />
+                    <div className="button-border button-border-top" />
+                    <div className="button-border button-border-right" />
+                    <div className="button-border button-border-bottom" />
 
                 </div>
 

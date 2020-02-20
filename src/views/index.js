@@ -1,6 +1,7 @@
 import React from "react";
 import SectionWrapper from '../global/SectionWrapper'
 import Button from "../global/Button"
+import WelcomeSection from "./components/Welcome/index"
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -11,12 +12,10 @@ class MainPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Under Construction</h1>
-
-        <SectionWrapper color='black'> <Button>Click me pretty please</Button></SectionWrapper>
+        <WelcomeSection></WelcomeSection>
         <SectionWrapper color='white' />
         <SectionWrapper color='gray' />
-        <SectionWrapper color='red'><Button>Click me pretty please</Button></SectionWrapper>
+        <SectionWrapper color='red'><Button borderColor="gray" labelColor="gray">Click me pretty please</Button></SectionWrapper>
       </div>
     );
   }
