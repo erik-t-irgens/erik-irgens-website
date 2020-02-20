@@ -11,9 +11,15 @@ class WelcomeSection extends React.Component {
 
     render() {
         return (
-            <SectionWrapper color="black">
-                <SectionTitle color="white">Welcome</SectionTitle>
-            </SectionWrapper>
+            <div>
+
+                <SectionWrapper transitionColor="#42f5d1" color="black">
+                    <SectionTitle color="white">Welcome</SectionTitle>
+                    <p style={{ color: 'white' }}>This site is currently a work in progress</p>
+                    {this.props.children}
+                </SectionWrapper>
+            </div >
+
 
         )
     }

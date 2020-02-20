@@ -4,8 +4,9 @@ class SectionTitle extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            titleViewed: false
-        };
+            titleViewed: false,
+
+        }
     }
 
     render() {
