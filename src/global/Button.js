@@ -7,11 +7,14 @@ class Button extends React.Component {
             buttonStyle: {
                 display: "inline-block",
                 textDecoration: "none",
-                position: "relative",
+                position: "absolute",
                 marginTop: "40px",
+                minWidth: '300px',
                 zIndex: 3,
                 cursor: 'pointer',
                 transition: 'all .05s ease-in-out',
+                left: '50%',
+                transform: 'translateX(-150px)'
             },
             topLayerStyle: {
                 border: "2px solid " + this.props.borderColor,
@@ -79,8 +82,7 @@ class Button extends React.Component {
         this.setState({
             buttonStyle: {
                 ...this.state.buttonStyle,
-                transform: 'scale(.99, .99)',
-
+                transform: 'scale(.99, .99) translate(-50%)'
             }
         })
     }
@@ -89,7 +91,7 @@ class Button extends React.Component {
         this.setState({
             buttonStyle: {
                 ...this.state.buttonStyle,
-                transform: 'scale(1, 1)',
+                transform: 'scale(1, 1) translate(-50%)'
 
             }
         })
@@ -103,19 +105,23 @@ class Button extends React.Component {
             },
             buttonBorderBottom: {
                 ...this.state.buttonBorderBottom,
-                width: 'calc(100% + 2px)'
+                width: 'calc(100% + 2px)',
+                backgroundColor: this.props.transitionColor,
             },
             buttonBorderTop: {
                 ...this.state.buttonBorderTop,
-                width: 'calc(100% + 2px)'
+                width: 'calc(100% + 2px)',
+                backgroundColor: this.props.transitionColor,
             },
             buttonBorderLeft: {
                 ...this.state.buttonBorderLeft,
-                height: 'calc(100% + 2px)'
+                height: 'calc(100% + 2px)',
+                backgroundColor: this.props.transitionColor,
             },
             buttonBorderRight: {
                 ...this.state.buttonBorderRight,
-                height: 'calc(100% + 2px)'
+                height: 'calc(100% + 2px)',
+                backgroundColor: this.props.transitionColor,
             }
         })
     }
@@ -128,19 +134,23 @@ class Button extends React.Component {
             },
             buttonBorderBottom: {
                 ...this.state.buttonBorderBottom,
-                width: 0
+                width: 0,
+                backgroundColor: 'white',
             },
             buttonBorderTop: {
                 ...this.state.buttonBorderTop,
-                width: 0
+                width: 0,
+                backgroundColor: 'white',
             },
             buttonBorderLeft: {
                 ...this.state.buttonBorderLeft,
-                height: 0
+                height: 0,
+                backgroundColor: 'white',
             },
             buttonBorderRight: {
                 ...this.state.buttonBorderRight,
-                height: 0
+                height: 0,
+                backgroundColor: 'white',
             }
         })
     }
@@ -154,7 +164,7 @@ class Button extends React.Component {
             <div
                 onMouseDown={this.onMouseDown}
                 onMouseUp={this.onMouseUp}
-                className="button nav-link" style={buttonStyle}
+                className="button" style={buttonStyle}
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseLeave}>
 
