@@ -180,6 +180,7 @@ class SectionWrapper extends React.Component {
 
     return (
       <div
+        id={this.props.idSet}
         className="section-wrapper"
         style={SectionWrapperStyle}
         onMouseOver={this.onMouseOver}

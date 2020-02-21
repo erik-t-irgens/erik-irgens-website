@@ -18,4 +18,12 @@ code {
 
 .section-title { 
   font-family: 'Major Mono Display', monospace;
+  font-size: 3em;
+  transition: all .5s ease-in-out;
+}
+
+@media only screen and (max-width: 700px) {
+  .section-title {
+    font-size: 2em;
+  }
 }
