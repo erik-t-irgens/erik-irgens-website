@@ -9,7 +9,9 @@ class Button extends React.Component {
                 textDecoration: "none",
                 position: "relative",
                 marginTop: "40px",
-                zIndex: 1,
+                zIndex: 3,
+                cursor: 'pointer',
+                transition: 'all .05s ease-in-out',
             },
             topLayerStyle: {
                 border: "2px solid " + this.props.borderColor,
@@ -73,27 +75,22 @@ class Button extends React.Component {
         }
     }
 
-    onMouseLeave = () => {
+    onMouseDown = () => {
         this.setState({
-            labelStyle: {
-                ...this.state.labelStyle,
-                color: this.props.labelColor,
-            },
-            buttonBorderBottom: {
-                ...this.state.buttonBorderBottom,
-                width: 0
-            },
-            buttonBorderTop: {
-                ...this.state.buttonBorderTop,
-                width: 0
-            },
-            buttonBorderLeft: {
-                ...this.state.buttonBorderLeft,
-                height: 0
-            },
-            buttonBorderRight: {
-                ...this.state.buttonBorderRight,
-                height: 0
+            buttonStyle: {
+                ...this.state.buttonStyle,
+                transform: 'scale(.99, .99)',
+
+            }
+        })
+    }
+
+    onMouseUp = () => {
+        this.setState({
+            buttonStyle: {
+                ...this.state.buttonStyle,
+                transform: 'scale(1, 1)',
+
             }
         })
     }
@@ -123,14 +120,44 @@ class Button extends React.Component {
         })
     }
 
+    onMouseLeave = () => {
+        this.setState({
+            labelStyle: {
+                ...this.state.labelStyle,
+                color: this.props.labelColor,
+            },
+            buttonBorderBottom: {
+                ...this.state.buttonBorderBottom,
+                width: 0
+            },
+            buttonBorderTop: {
+                ...this.state.buttonBorderTop,
+                width: 0
+            },
+            buttonBorderLeft: {
+                ...this.state.buttonBorderLeft,
+                height: 0
+            },
+            buttonBorderRight: {
+                ...this.state.buttonBorderRight,
+                height: 0
+            }
+        })
+    }
+
+
     render() {
 
         const { buttonStyle, topLayerStyle, labelStyle, buttonBorderBottom, buttonBorderLeft, buttonBorderRight, buttonBorderTop } = this.state
 
         return (
-            <a href="#" className="button nav-link" style={buttonStyle}
+            <div
+                onMouseDown={this.onMouseDown}
+                onMouseUp={this.onMouseUp}
+                className="button nav-link" style={buttonStyle}
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseLeave}>
+
                 <div className="top" style={topLayerStyle} >
 
                     <div className="label" style={labelStyle}>{this.props.children}</div>
@@ -145,7 +172,7 @@ class Button extends React.Component {
 
                 </div>
 
-            </a>
+            </div>
         );
     }
 }

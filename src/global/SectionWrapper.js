@@ -4,12 +4,38 @@ class SectionWrapper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      separatorStyle: {
+        position: 'fixed',
+        zIndex: 4,
+        height: '2px',
+        width: '10%',
+        backgroundColor: this.props.transitionColor,
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        transition: 'all 1s ease-in-out',
+
+      },
+
+      faderStyle: {
+        // display: "inline-block",
+        textDecoration: "none",
+        position: "absolute",
+        backgroundColor: "gray",
+        zIndex: 1,
+        width: '100%',
+        height: '100%',
+        backgroundImage: `url(${this.props.backgroundImage})`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: 'cover',
+        transition: 'all .5s ease-in-out',
+
+      },
+
       SectionWrapperStyle:
       {
-        width: '100vw',
+        width: '100%',
         height: '100vh',
-        backgroundImage: `url(${this.props.backgroundImage})`,
-        backgroundColor: 'black',
         transition: 'all 2s ease-out',
       }
       ,
@@ -17,17 +43,16 @@ class SectionWrapper extends React.Component {
         display: "inline-block",
         textDecoration: "none",
         position: "relative",
-
-        // left: 0,
         top: '50%',
         transform: 'translateY(-50%)',
-        width: '90%',
-        height: '90%',
+        width: '95%',
+        height: '95%',
         // padding: '24px 34px 22px 34px',
         transition: 'all .5s ease-in-out',
       },
       borderLeft: {
         left: '5px',
+        zIndex: 2,
         bottom: '-5px',
         width: '2px',
         height: 0,
@@ -40,6 +65,7 @@ class SectionWrapper extends React.Component {
       borderRight: {
         right: '-5px',
         top: '5px',
+        zIndex: 2,
         width: '2px',
         height: 0,
         position: 'absolute',
@@ -53,6 +79,7 @@ class SectionWrapper extends React.Component {
         width: 0,
         height: '2px',
         position: 'absolute',
+        zIndex: 2,
         backgroundColor: 'white',
         opacity: 0,
         transition: 'all .8s ease-out'
@@ -63,6 +90,7 @@ class SectionWrapper extends React.Component {
         width: 0,
         height: '2px',
         position: 'absolute',
+        zIndex: 2,
         backgroundColor: 'white',
         opacity: 0,
         transition: 'all .8s ease-out'
@@ -74,11 +102,13 @@ class SectionWrapper extends React.Component {
 
   onMouseLeave = () => {
     this.setState({
-      SectionWrapperStyle: {
-        ...this.state.SectionWrapperStyle,
-        backgroundColor: 'black',
-        backgroundImage: `url(${this.props.backgroundImage})`
-
+      separatorStyle: {
+        ...this.state.separatorStyle,
+        width: 0
+      },
+      faderStyle: {
+        ...this.state.faderStyle,
+        opacity: 1
       },
       borderBottom: {
         ...this.state.borderBottom,
@@ -109,10 +139,13 @@ class SectionWrapper extends React.Component {
 
   onMouseOver = () => {
     this.setState({
-      SectionWrapperStyle: {
-        ...this.state.SectionWrapperStyle,
-        backgroundColor: this.props.color,
-        backgroundImage: "none"
+      separatorStyle: {
+        ...this.state.separatorStyle,
+        width: '25%'
+      },
+      faderStyle: {
+        ...this.state.faderStyle,
+        opacity: .1
       },
       borderBottom: {
         ...this.state.borderBottom,
@@ -143,31 +176,42 @@ class SectionWrapper extends React.Component {
 
   render() {
 
-    const { borderBottom, borderLeft, borderRight, borderTop, wrapperStyle, SectionWrapperStyle } = this.state
+    const { separatorStyle, faderStyle, borderBottom, borderLeft, borderRight, borderTop, wrapperStyle, SectionWrapperStyle } = this.state
 
     return (
       <div
+        className="section-wrapper"
         style={SectionWrapperStyle}
         onMouseOver={this.onMouseOver}
         onMouseLeave={this.onMouseLeave}
-        onScr
       >
+
         {
           this.props.children ?
-            <div style={{ zIndex: 1, position: 'absolute', textAlign: 'center', margin: 0, left: '50%', transform: "translateX(-50%)" }}>
+            <div style={{ zIndex: 2, position: 'absolute', textAlign: 'center', margin: 0, left: '50%', transform: "translateX(-50%)" }}>
               {this.props.children}
             </div>
             :
             <></>
         }
-        <div style={wrapperStyle}>
-          <div style={borderLeft} className="button-border button-border-left" />
 
-          <div style={borderTop} className="button-border button-border-top" />
 
-          <div style={borderRight} className="button-border button-border-right" />
 
-          <div style={borderBottom} className="button-border button-border-bottom" />
+
+
+
+        <div className="section-fader" style={faderStyle}></div>
+        <div className="border-wrapper" style={wrapperStyle}>
+          {/* <div className="top-section-separator" style={separatorStyle}></div> */}
+
+          <div className="bottom-section-separator" style={separatorStyle}></div>
+          <div style={borderLeft} className="border border-left" />
+
+          <div style={borderTop} className="border border-top" />
+
+          <div style={borderRight} className="border border-right" />
+
+          <div style={borderBottom} className="border border-bottom" />
         </div>
       </div>
     )
