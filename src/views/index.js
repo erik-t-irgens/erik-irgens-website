@@ -3,6 +3,7 @@ import SectionWrapper from '../global/SectionWrapper'
 import SectionTitle from '../global/SectionTitle'
 import Button from "../global/Button"
 import WelcomeSection from "./components/Welcome/index"
+import AboutSection from "./components/About/index"
 import Header from "../global/Header/index"
 
 import ScrollTo from 'react-scroll-into-view'
@@ -39,20 +40,13 @@ class MainPage extends React.Component {
         <WelcomeSection
 
 
-          className="section-wrapper about">
+          className="section-wrapper welcome">
           <ScrollTo alignToTop selector={`#about-section`}>
             <Button borderColor="white" labelColor="white" transitionColor="#42f5d1">Learn More</Button>
           </ScrollTo>
         </WelcomeSection>
+        <AboutSection className="section-wrapper about"></AboutSection>
 
-        <SectionWrapper
-          idSet="about-section"
-          className="section-wrapper"
-          backgroundImage={Image11} transitionColor="#ffb619"
-          color='black'>
-          <SectionTitle color="white">About</SectionTitle>
-          <Button borderColor="white" labelColor="white" transitionColor="#ffb619">Example</Button>
-        </SectionWrapper>
 
         <SectionWrapper
           idSet="skills-section"
