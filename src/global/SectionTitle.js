@@ -12,13 +12,13 @@ class SectionTitle extends React.Component {
     render() {
         return (
             <div className="section-title">
-                <h1 style={{ color: this.props.color }}>
+                <div style={{ color: this.props.color }}>
                     {
                         this.props.children ?
                             this.props.children :
                             <></>
                     }
-                </h1>
+                </div>
             </div>
         )
     }

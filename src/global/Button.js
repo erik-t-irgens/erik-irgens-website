@@ -8,21 +8,20 @@ class Button extends React.Component {
                 display: "inline-block",
                 textDecoration: "none",
                 position: "absolute",
-                marginTop: "40px",
+                // marginTop: "40px",
                 minWidth: '300px',
                 zIndex: 3,
                 cursor: 'pointer',
                 transition: 'all .05s ease-in-out',
                 left: '50%',
-                transform: 'translateX(-150px)'
+                transform: 'translateX(-50%)'
             },
             topLayerStyle: {
                 border: "2px solid " + this.props.borderColor,
                 position: 'relative',
                 left: 0,
                 top: 0,
-                width: '100%',
-                height: '100%',
+
                 padding: '24px 34px 22px 34px',
                 transition: 'all .5s ease-in-out',
             },
@@ -82,7 +81,8 @@ class Button extends React.Component {
         this.setState({
             buttonStyle: {
                 ...this.state.buttonStyle,
-                transform: 'scale(.99, .99) translate(-50%)'
+                left: '50%',
+                transform: 'scale(.99) translate(-50.5%)'
             }
         })
     }
@@ -91,7 +91,7 @@ class Button extends React.Component {
         this.setState({
             buttonStyle: {
                 ...this.state.buttonStyle,
-                transform: 'scale(1, 1) translate(-50%)'
+                transform: 'scale(1, 1) translateX(-50%)'
 
             }
         })

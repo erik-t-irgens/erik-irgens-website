@@ -44,9 +44,9 @@ class Header extends React.Component {
                 {/* <div style={tagStyle} className="nav-bar-tag"><h1>>></h1></div> */}
 
                 <div style={headerStyle} className="side-nav-bar">
-                    <NavButton navLocation="welcome-section" color="#42f5d1">&#8593;BackUp</NavButton>
+                    <NavButton navLocation="welcome-section" color="#42f5d1">&#8593;ToTop</NavButton>
                     <NavButton navLocation="about-section" color="#ffb619">About</NavButton>
-                    <NavButton navLocation="skills-section" color="#e6d47c">Skills</NavButton>
+
                     <NavButton navLocation="portfolio-section" color="#ff4242">Portfolio</NavButton>
                     <NavButton navLocation="blog-section" color="#7081ff">Blog</NavButton>
                     <NavButton navLocation="contact-section" color="#80ffa2">Contact</NavButton>
