@@ -26,7 +26,9 @@ class MainPage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+
+    };
 
   }
 
@@ -48,15 +50,7 @@ class MainPage extends React.Component {
         <AboutSection className="section-wrapper about"></AboutSection>
 
 
-        <SectionWrapper
-          idSet="skills-section"
 
-          className="section-wrapper"
-          backgroundImage={Image10} transitionColor="#e6d47c" color='black'>
-          <SectionTitle color="white">Skills</SectionTitle>
-          <Button borderColor="white" labelColor="white" transitionColor="#e6d47c">Example</Button>
-
-        </SectionWrapper>
 
         <SectionWrapper
 

@@ -75,7 +75,7 @@ class SectionWrapper extends React.Component {
       },
       borderTop: {
         left: '5px',
-        top: '5px',
+        top: '4px',
         width: 0,
         height: '2px',
         position: 'absolute',
@@ -86,7 +86,7 @@ class SectionWrapper extends React.Component {
       },
       borderBottom: {
         right: '-5px',
-        bottom: '-5px',
+        bottom: '-6px',
         width: 0,
         height: '2px',
         position: 'absolute',
@@ -189,7 +189,7 @@ class SectionWrapper extends React.Component {
 
         {
           this.props.children ?
-            <div style={{ zIndex: 2, position: 'absolute', textAlign: 'center', margin: 0, left: '50%', transform: "translateX(-50%)" }}>
+            <div className="section-children-wrapper" >
               {this.props.children}
             </div>
             :
