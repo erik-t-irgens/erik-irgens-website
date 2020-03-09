@@ -15,7 +15,10 @@ class ContactSection extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            sectionActive: false
+            sectionActive: false,
+            socialButtonGridStyle: {
+                position: 'relative', top: '67vh', width: '90vw', opacity: 0, transform: 'translate(0%, -50%)', transition: 'all 2s ease-in-out',
+            }
         };
     }
 
@@ -23,11 +26,21 @@ class ContactSection extends React.Component {
 
     setSectionActive = () => {
         this.setState({ sectionActive: true })
+        setTimeout(() => {
+            this.setState({
+                socialButtonGridStyle: {
+                    ...this.state.socialButtonGridStyle,
+                    opacity: 1,
+                    transform: 'translate(0%, 0%)',
+                },
+
+            })
+        }, 1000)
     }
 
     render() {
 
-        const { sectionActive } = this.state
+        const { sectionActive, socialButtonGridStyle } = this.state
         return (
 
 
@@ -43,7 +56,7 @@ class ContactSection extends React.Component {
 
 
 
-                <div className="social-button-section" style={{ position: 'relative', top: '67vh', width: '90vw' }}>
+                <div className="social-button-section" style={socialButtonGridStyle}>
                     <SocialButton
                         functionality={'https://www.facebook.com/erik.irgens'}
                         borderColor="white" labelColor="white" transitionColor="#80ffa2"><img className="social-icon-image" style={{ width: '25px', color: 'white' }} src={facebook} alt="Link to facebook"></img></SocialButton>
