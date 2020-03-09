@@ -13,11 +13,15 @@ class ContactSection extends React.Component {
         };
     }
 
+
+
     setSectionActive = () => {
         this.setState({ sectionActive: true })
     }
 
     render() {
+
+        const { sectionActive } = this.state
         return (
 
 
@@ -28,7 +32,7 @@ class ContactSection extends React.Component {
                 backgroundImage={Image3}
                 transitionColor="#80ffa2" color='black'
             >
-                <SectionTitle color="white">Contact</SectionTitle>
+                <SectionTitle direction='translate(0, 100px)' visibility={sectionActive} color="white">Contact</SectionTitle>
                 <Button borderColor="white" labelColor="white" transitionColor="#80ffa2">Example</Button>
 
             </SectionWrapper>

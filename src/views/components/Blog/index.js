@@ -20,6 +20,8 @@ class BlogSection extends React.Component {
     }
 
     render() {
+
+        const { sectionActive } = this.state
         return (
 
 
@@ -31,7 +33,7 @@ class BlogSection extends React.Component {
                 backgroundImage={Image8}
                 transitionColor="#7081ff" color='black'
             >
-                <SectionTitle color="white">Blog</SectionTitle>
+                <SectionTitle direction='translate(100px, 0%)' visibility={sectionActive} color="white">Blog</SectionTitle>
                 <Button borderColor="white" labelColor="white" transitionColor="#7081ff">Example</Button>
 
             </SectionWrapper>

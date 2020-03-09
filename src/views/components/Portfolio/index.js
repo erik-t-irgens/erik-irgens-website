@@ -19,6 +19,7 @@ class PortfolioSection extends React.Component {
     }
 
     render() {
+        const { sectionActive } = this.state
         return (
 
 
@@ -29,7 +30,7 @@ class PortfolioSection extends React.Component {
                 backgroundImage={Image5}
                 transitionColor="#ff4242" color='black'
             >
-                <SectionTitle color="white">Portfolio</SectionTitle>
+                <SectionTitle direction='translate(-100px, 0%)' visibility={sectionActive} color="white">Portfolio</SectionTitle>
                 <Button borderColor="white" labelColor="white" transitionColor="#ff4242">Example</Button>
 
             </SectionWrapper>

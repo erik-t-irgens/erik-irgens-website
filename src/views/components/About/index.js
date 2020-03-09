@@ -20,15 +20,18 @@ class AboutSection extends React.Component {
     }
 
     render() {
+
+        const { sectionActive } = this.state
         return (
 
 
             <SectionWrapper
                 idSet="about-section"
+                className="section-wrapper about"
                 functionality={this.setSectionActive}
                 backgroundImage={Image11} transitionColor="#ffb619" color="black">
 
-                <SectionTitle color="white" >About</SectionTitle>
+                <SectionTitle direction='translate(0, 20px)' visibility={sectionActive} color="white" >About</SectionTitle>
 
 
                 <div className="about-section-content-grid">
@@ -36,13 +39,41 @@ class AboutSection extends React.Component {
                         <div className='about-image-carousel'></div>
                     </div>
                     <div className="about-skills-column">
-                        <SkillSlider backdropcolor="#161616" width="20%" themeColor="#ffb619" color='white' >React</SkillSlider>
-                        <SkillSlider backdropcolor="#161616" width="50%" themeColor="#ffb619" color='white' >CSS</SkillSlider>
-                        <SkillSlider backdropcolor="#161616" width="20%" themeColor="#ffb619" color='white' >JavaScript</SkillSlider>
-                        <SkillSlider backdropcolor="#161616" width="50%" themeColor="#ffb619" color='white' >Node.JS</SkillSlider>
-                        <SkillSlider backdropcolor="#161616" width="50%" themeColor="#ffb619" color='white' >C#/.NET</SkillSlider>
-                        <SkillSlider backdropcolor="#161616" width="50%" themeColor="#ffb619" color='white' >MySQL</SkillSlider>
-                        <SkillSlider backdropcolor="#161616" width="50%" themeColor="#ffb619" color='white' >AWS Services</SkillSlider>
+                        <SkillSlider visibility={sectionActive}
+                            backdropcolor="#161616"
+                            width="20%"
+                            themeColor="#ffb619"
+                            color='white' >React</SkillSlider>
+                        <SkillSlider visibility={sectionActive}
+                            backdropcolor="#161616"
+                            width="50%"
+                            themeColor="#ffb619"
+                            color='white' >CSS</SkillSlider>
+                        <SkillSlider visibility={sectionActive}
+                            backdropcolor="#161616"
+                            width="20%"
+                            themeColor="#ffb619"
+                            color='white' >JavaScript</SkillSlider>
+                        <SkillSlider visibility={sectionActive}
+                            backdropcolor="#161616"
+                            width="50%"
+                            themeColor="#ffb619"
+                            color='white' >Node.JS</SkillSlider>
+                        <SkillSlider visibility={sectionActive}
+                            backdropcolor="#161616"
+                            width="50%"
+                            themeColor="#ffb619"
+                            color='white' >C#/.NET</SkillSlider>
+                        <SkillSlider visibility={sectionActive}
+                            backdropcolor="#161616"
+                            width="50%"
+                            themeColor="#ffb619"
+                            color='white' >MySQL</SkillSlider>
+                        <SkillSlider visibility={sectionActive}
+                            backdropcolor="#161616"
+                            width="50%"
+                            themeColor="#ffb619"
+                            color='white' >AWS Services</SkillSlider>
 
 
 
