@@ -99,6 +99,7 @@ code {
   transition: all .5s ease-in-out;
   max-width: 95%;
   max-height: 100%;
+
   z-index: 2;
   position: absolute;
   text-align: center;
@@ -111,6 +112,18 @@ code {
   margin-bottom: 30px;
   font-weight: 900;
   font-size: 4em;
+}
+
+
+/* CONTACT SECTION  */
+
+.social-icon-image {
+  width: '25px';
+   color: 'white';
+}
+
+.social-icon-color {
+  fill: 'white'
 }
 
 

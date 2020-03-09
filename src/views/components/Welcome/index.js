@@ -4,7 +4,6 @@ import SectionTitle from "../../../global/SectionTitle"
 import ScrollTo from 'react-scroll-into-view'
 import Button from '../../../global/Button'
 
-
 import Image10 from "../../../Backgrounds/10.jpg"
 
 class WelcomeSection extends React.Component {
@@ -31,7 +30,7 @@ class WelcomeSection extends React.Component {
             },
             buttonStyle: {
                 opacity: 0,
-                transform: 'translate(0, 100px)',
+                transform: 'translate(0, 50px)',
                 transition: 'all 2s ease-in-out',
             }
 
