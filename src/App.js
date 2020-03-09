@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import MainPage from "./views/index";
+import ScrollSnapView from "./global/ScrollSnapView"
 
 class App extends Component {
   constructor(props) {
@@ -17,13 +18,11 @@ class App extends Component {
           <title>Erik Irgens</title>
         </Helmet>
         <BrowserRouter>
-          <div>
-            {/* <Header /> */}
+          {/* <Header /> */}
 
-            <Switch>
-              <Route path={"/"} component={MainPage} />
-            </Switch>
-          </div>
+          <Switch>
+            <Route path={"/"} component={MainPage} />
+          </Switch>
         </BrowserRouter>
       </div>
     );

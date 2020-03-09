@@ -172,6 +172,9 @@ class SectionWrapper extends React.Component {
         opacity: 1,
       }
     })
+    if (this.props.functionality) {
+      this.props.functionality()
+    }
   }
 
   render() {
