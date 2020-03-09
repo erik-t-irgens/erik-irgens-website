@@ -22,23 +22,28 @@ class WelcomeSection extends React.Component {
         };
     }
 
+
+    setSectionActive = () => {
+        this.setState({ sectionActive: true })
+    }
     render() {
 
-        const { paragraphStyle } = this.state
+        const { paragraphStyle, sectionActive } = this.state
         return (
-            <div>
 
-                <SectionWrapper
-                    idSet="welcome-section"
-                    backgroundImage={Image10} transitionColor="#42f5d1" color="black">
-                    <SectionTitle color='white'>Welcome</SectionTitle>
 
-                    <div style={paragraphStyle} className="welcome-statement" >Hi. I'm <span style={{ opacity: 1, color: "#42f5d1" }}>Erik Irgens</span>, and I'm a front-end engineer.
+            <SectionWrapper
+                idSet="welcome-section"
+                functionality={this.setSectionActive}
+                backgroundImage={Image10} transitionColor="#42f5d1" color="black">
+                <SectionTitle visibility={sectionActive} color='white'>Welcome</SectionTitle>
+
+                <div style={paragraphStyle} className="welcome-statement" >Hi. I'm <span style={{ opacity: 1, color: "#42f5d1" }}>Erik Irgens</span>, and I'm a front-end engineer.
 
 </div>
-                    {this.props.children}
-                </SectionWrapper>
-            </div >
+                {this.props.children}
+            </SectionWrapper>
+
 
 
         )
