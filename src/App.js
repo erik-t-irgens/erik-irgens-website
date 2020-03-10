@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import MainPage from "./views/index";
-import ScrollSnapView from "./global/ScrollSnapView"
+// import ScrollSnapView from "./global/ScrollSnapView"
 
 class App extends Component {
   constructor(props) {

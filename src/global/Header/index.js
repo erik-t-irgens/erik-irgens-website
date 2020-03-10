@@ -38,7 +38,9 @@ class Header extends React.Component {
 
     render() {
 
-        const { headerStyle, tagStyle } = this.state
+        const { headerStyle,
+            // tagStyle
+        } = this.state
         return (
             <div className="nav-bar-wrapper">
                 {/* <div style={tagStyle} className="nav-bar-tag"><h1>>></h1></div> */}
