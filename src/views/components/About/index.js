@@ -41,37 +41,43 @@ class AboutSection extends React.Component {
                     <div className="about-skills-column">
                         <SkillSlider visibility={sectionActive}
                             backdropcolor="#161616"
-                            width="20%"
+                            width="90%"
                             themeColor="#ffb619"
                             color='white' >React</SkillSlider>
+
                         <SkillSlider visibility={sectionActive}
                             backdropcolor="#161616"
-                            width="50%"
+                            width="80%"
                             themeColor="#ffb619"
                             color='white' >CSS</SkillSlider>
+
                         <SkillSlider visibility={sectionActive}
                             backdropcolor="#161616"
-                            width="20%"
+                            width="82%"
                             themeColor="#ffb619"
                             color='white' >JavaScript</SkillSlider>
+
                         <SkillSlider visibility={sectionActive}
                             backdropcolor="#161616"
-                            width="50%"
+                            width="65%"
                             themeColor="#ffb619"
                             color='white' >Node.JS</SkillSlider>
+
                         <SkillSlider visibility={sectionActive}
                             backdropcolor="#161616"
-                            width="50%"
+                            width="75%"
                             themeColor="#ffb619"
                             color='white' >C#/.NET</SkillSlider>
+
                         <SkillSlider visibility={sectionActive}
                             backdropcolor="#161616"
                             width="50%"
                             themeColor="#ffb619"
                             color='white' >MySQL</SkillSlider>
+
                         <SkillSlider visibility={sectionActive}
                             backdropcolor="#161616"
-                            width="50%"
+                            width="53%"
                             themeColor="#ffb619"
                             color='white' >AWS Services</SkillSlider>
 
