@@ -8,8 +8,7 @@ class Button extends React.Component {
                 display: "inline-block",
                 textDecoration: "none",
                 position: "absolute",
-                // marginTop: "40px",
-                minWidth: '300px',
+                minWidth: '100px',
                 zIndex: 3,
                 cursor: 'pointer',
                 transition: 'all .05s ease-in-out',
@@ -18,21 +17,9 @@ class Button extends React.Component {
             },
             topLayerStyle: {
                 border: "2px solid " + this.props.borderColor,
-                position: 'relative',
-                left: 0,
-                top: 0,
 
-                padding: '24px 34px 22px 34px',
-                transition: 'all .5s ease-in-out',
             },
             labelStyle: {
-                fontFamily: "'Major Mono Display', monospace",
-                fontWeight: 600,
-                fontSize: '12px',
-                lineHeight: '110%',
-                letterSpacing: '2px',
-                textAlign: 'center',
-                transition: 'all .15s ease-out',
                 color: this.props.labelColor
             },
             buttonBorderLeft: {
@@ -168,9 +155,9 @@ class Button extends React.Component {
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseLeave}>
 
-                <div className="top" style={topLayerStyle} >
+                <div className="button-top" style={topLayerStyle} >
 
-                    <div className="label" style={labelStyle}>{this.props.children}</div>
+                    <div className="button-label" style={labelStyle}>{this.props.children}</div>
 
                     <div style={buttonBorderLeft} className="button-border button-border-left" />
 

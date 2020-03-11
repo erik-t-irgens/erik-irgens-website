@@ -18,76 +18,188 @@ code {
     
 }
 
+/* SCROLL-SNAPPING */
+
+.scroll-snap-view {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-snap-view > .scroll-snap-child {
+  scroll-snap-align: start;
+}
+
+/* GLOBAL COMPONENTS */
+/* BUTTON */
+
+.button-top {
+  position: relative;
+  left: 0;
+  top: 0;
+  padding: 18px 20px 16px 20px;
+  transition: all .5s ease-in-out;
+}
+.button-label {
+  font-family: 'Major Mono Display', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 110%;
+  letter-spacing: 2px;
+  text-align: center;
+  transition: all .15s ease-out;
+}
+
 /* ABOUT */
 
 
 .about-section-content-grid {
-  width: 90vw;
-  max-height: 50vh;
-   transition: all .5s ease-in-out;
-   overflow-y: auto;
-    display: grid;
-  grid-template-areas: 'left right';
-  grid-template-columns: 4fr 4fr;
+  /* width: 90vw; */
+  max-height: 80vh;
+  transition: all .5s ease-in-out;
+  overflow-y: auto; 
+  display: grid;
+  /* grid-template-areas: 'left right'; */
+  /* grid-template-columns: 4fr 4fr; */
+
+  grid-template-columns: repeat(auto-fit, minmax(95%, 2fr));
+   /* grid-template-rows: repeat(2, auto); */
   grid-auto-flow: row;
   grid-gap: 1;
 }
 .about-image-carousel-column {
-  grid-area: left;
+  /* grid-area: left; */
   grid-row: auto;
 
 }
 
 .about-skills-column {
-  grid-area: right;
+  /* grid-area: right; */
   grid-row: auto;
 }
 
 /* ABOUT - CAROUSEL SECTION */
-
+/* Wrapper */
 .about-image-carousel {
   width: 100%;
   height: 100%;
-  background-color: #161616;
-  opacity: .5;
- 
+  /* background-color: #161616; */
+  opacity: .8;
+ margin-bottom: 10px;
   
+}
+
+.about-image-carousel-invisible {
+transform: translateY(10px);
+
+  opacity: 0;
+
+  
+}
+
+/* CAROUSEL STUFF */
+
+.slider {
+  width: 70vw;
+  text-align: center;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  height: 55vh;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+}
+.slides::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.slides::-webkit-scrollbar-thumb {
+  background: #ffb619;
+  border-radius: 2px;
+}
+.slides::-webkit-scrollbar-track {
+  background: transparent;
+
+}
+.slides > div {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  width: 95%;
+  height: 100%;
+  margin-right: 10px;
+  background: #161616;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: .5px solid gray;
+  border-style: groove;
+
+}
+
+
+.carousel-img {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* ABOUT - SKILL SECTION  */
 .skill-name {
   font-family: 'Montserrat', sans-serif;
-  width: 125px;
+  width: 80px;
   font-size: 10px;
   text-shadow: 1px 1px 1px gray;
   grid-area: left;
   grid-row: auto;
+ transform: translateY(-50%);
   
 }
 
+
+ .skill-name-wrapper {
+  height: 20px;
+}
+
+
 .skill-bar {
+  
   grid-area: right;
   grid-row: auto;
-  height: 100%;
+  height: 80%;
   border-bottom-right-radius: 4px;
   border-top-right-radius: 4px;
-   transition: all 2s ease-in-out;
-   box-shadow: 2px 0px 0px black;
-   opacity: .7;
+  transition: all 2s ease-in-out;
+  box-shadow: 2px 0px 0px black;
+  opacity: .7;
+  
    
 }
 
 
-
 .skill-slider-wrapper {
+  min-width: 50vw;
   display: grid;
   grid-template-areas: 'left right';
   grid-template-columns: 1fr 5fr;
   grid-auto-flow: row;
   grid-gap: 0;
   max-width: 100%;
-  border: 1px solid gray;
-  margin: 2px;
+  border: .5px solid gray;
+  margin: 1px;
   border-style: groove;
 }
 
@@ -150,28 +262,55 @@ height: 100vh;
 
 
 @media only screen and (max-width: 700px), screen and (max-height: 570px)  {
+
+  .slides { 
+    height: 30vh;
+  }
+
+  .skill-name {
+    font-size: 8px;
+    transform: translateY(-80%);
+  }
+
+   .skill-name-wrapper {
+  height: 10px;
+}
+
   .section-title {
     font-size: 3em;
   }
+
   .welcome-statement {
     font-size: 2em;
+  }
 
+  .button-top {
+  padding: 16px 18px 14px 18px;
+  }
+
+  .button-label {
+    font-family: 'Major Mono Display', monospace;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 110%;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: all .15s ease-out;
   }
 }
 
 @media only screen and (max-width: 500px), screen and (max-height: 410px) {
+
   .section-title {
     font-size: 2em;
   }
+
   .section-title, .welcome-statement {
-    
     text-shadow: 2px 2px 2px black;
   }
 
   .welcome-statement {
     font-weight: 900;
     font-size: 1em;
-      }
-
-
+  }
 }

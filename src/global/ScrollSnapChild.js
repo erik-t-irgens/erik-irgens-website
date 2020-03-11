@@ -11,7 +11,7 @@ class ScrollSnapChild extends React.Component {
 
     render() {
         return (
-            <div style={{ scrollSnapAlign: 'start' }}>{this.props.children}</div>
+            <div className='scroll-snap-child'>{this.props.children}</div>
         )
     }
 }
