@@ -12,8 +12,10 @@ class ScrollSnapView extends React.Component {
 
     render() {
         return (
-            <div style={{ scrollSnapType: 'y mandatory' }}>
-                {this.props.children.map(child => <ScrollSnapChild>{child}</ScrollSnapChild>)}
+            <div className="scroll-snap-view" >
+                {this.props.children.map(function (child, i) {
+                    return (<ScrollSnapChild key={i}>{child}</ScrollSnapChild>)
+                })}
             </div>
 
         )

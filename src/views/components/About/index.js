@@ -6,6 +6,7 @@ import Button from '../../../global/Button'
 import SkillSlider from "./components/SkillSlider"
 
 import Image11 from "../../../Backgrounds/11.jpg"
+import ImageCarousel from "./components/ImageCarousel";
 
 class AboutSection extends React.Component {
     constructor(props) {
@@ -35,51 +36,51 @@ class AboutSection extends React.Component {
 
 
                 <div className="about-section-content-grid">
-                    <div className='about-image-carousel-column'>
-                        <div className='about-image-carousel'></div>
-                    </div>
+
+                    <ImageCarousel visibility={sectionActive}></ImageCarousel>
+
                     <div className="about-skills-column">
-                        <SkillSlider visibility={sectionActive}
+                        <SkillSlider animationlength={.9} visibility={sectionActive}
                             backdropcolor="#161616"
                             width="90%"
                             themeColor="#ffb619"
                             color='white' >React</SkillSlider>
 
-                        <SkillSlider visibility={sectionActive}
+                        <SkillSlider animationlength={.8} visibility={sectionActive}
                             backdropcolor="#161616"
                             width="80%"
                             themeColor="#ffb619"
                             color='white' >CSS</SkillSlider>
 
-                        <SkillSlider visibility={sectionActive}
+                        <SkillSlider animationlength={.7} visibility={sectionActive}
                             backdropcolor="#161616"
                             width="82%"
                             themeColor="#ffb619"
                             color='white' >JavaScript</SkillSlider>
 
-                        <SkillSlider visibility={sectionActive}
+                        <SkillSlider animationlength={.6} visibility={sectionActive}
                             backdropcolor="#161616"
                             width="65%"
                             themeColor="#ffb619"
                             color='white' >Node.JS</SkillSlider>
 
-                        <SkillSlider visibility={sectionActive}
+                        <SkillSlider animationlength={.7} visibility={sectionActive}
                             backdropcolor="#161616"
                             width="75%"
                             themeColor="#ffb619"
                             color='white' >C#/.NET</SkillSlider>
 
-                        <SkillSlider visibility={sectionActive}
+                        <SkillSlider animationlength={.8} visibility={sectionActive}
                             backdropcolor="#161616"
                             width="50%"
                             themeColor="#ffb619"
                             color='white' >MySQL</SkillSlider>
 
-                        <SkillSlider visibility={sectionActive}
+                        <SkillSlider animationlength={.9} visibility={sectionActive}
                             backdropcolor="#161616"
                             width="53%"
                             themeColor="#ffb619"
-                            color='white' >AWS Services</SkillSlider>
+                            color='white' >AWS</SkillSlider>
 
 
 
@@ -87,7 +88,7 @@ class AboutSection extends React.Component {
 
                 </div>
 
-                <Button borderColor="white" labelColor="white" transitionColor="#ffb619">Example</Button>
+                <Button borderColor="white" labelColor="white" transitionColor="#ffb619">See my Portfolio</Button>
 
 
                 {this.props.children}
