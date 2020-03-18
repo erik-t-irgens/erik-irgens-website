@@ -17,7 +17,7 @@ class ContactSection extends React.Component {
         this.state = {
             sectionActive: false,
             socialButtonGridStyle: {
-                position: 'relative', top: '67vh', width: '90vw', opacity: 0, transform: 'translate(0%, -50%)', transition: 'all 2s ease-in-out',
+                position: 'absolute', bottom: '50px', opacity: 0, left: '50%', transform: 'translate(-50%, -50%)', transition: 'all 2s ease-in-out',
             }
         };
     }
@@ -31,7 +31,7 @@ class ContactSection extends React.Component {
                 socialButtonGridStyle: {
                     ...this.state.socialButtonGridStyle,
                     opacity: 1,
-                    transform: 'translate(0%, 0%)',
+                    transform: 'translate(-50%, 0%)',
                 },
 
             })

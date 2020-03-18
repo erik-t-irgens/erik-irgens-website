@@ -4,6 +4,7 @@ import SectionTitle from "../../../global/SectionTitle"
 import Button from '../../../global/Button'
 
 import SkillSlider from "./components/SkillSlider"
+import ScrollTo from 'react-scroll-into-view'
 
 import Image11 from "../../../Backgrounds/11.jpg"
 import ImageCarousel from "./components/ImageCarousel";
@@ -88,7 +89,8 @@ class AboutSection extends React.Component {
 
                 </div>
 
-                <Button borderColor="white" labelColor="white" transitionColor="#ffb619">See my Portfolio</Button>
+                <ScrollTo alignToTop selector={`#portfolio-section`}>
+                    <Button borderColor="white" labelColor="white" transitionColor="#ffb619">See my Portfolio</Button></ScrollTo>
 
 
                 {this.props.children}

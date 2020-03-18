@@ -25,17 +25,15 @@ code {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   /* For some reason, overflow: scroll doesn't detect that the view is shorter than itself.  */
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
  
-
-  border: 2px solid var(--gs0);
-  border-radius: 8px;
   height: 100vh;
   
 }
 
 .scroll-snap-view > .scroll-snap-child {
-  scroll-snap-align: start;
+  scroll-snap-align: center;
 }
 
 /* GLOBAL COMPONENTS */
@@ -108,7 +106,7 @@ transform: translateY(10px);
 /* CAROUSEL STUFF */
 
 .slider {
-  width: 70vw;
+  width: 100%;
   text-align: center;
   overflow: hidden;
 }
@@ -117,6 +115,7 @@ transform: translateY(10px);
   display: flex;
   height: 55vh;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   
   scroll-behavior: smooth;
@@ -223,7 +222,8 @@ transform: translateY(10px);
   left: 50%;
   transform: translate(-50%, 0);
   transition: all .5s ease-in-out;
-  max-width: 95%;
+  min-width: 90%;
+  max-width: 90%;
   max-height: 100%;
 height: 100vh;
   z-index: 2;
@@ -257,11 +257,14 @@ height: 100vh;
 /* WELCOME SECTION */
 .welcome-statement {
   font-size: 3em; 
+  max-width: 80vw;
+  height: 10vh;
+  left: 50%;
+  transform: translateX(-50%)
 }
 
 .section-title, .welcome-statement { 
   font-family: 'Major Mono Display', monospace;
-  
   transition: all .5s ease-in-out;
   
 }

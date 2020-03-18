@@ -1,6 +1,6 @@
 import React from "react";
 
-class SocialButton extends React.Component {
+class ProjectDisplay extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,7 +16,7 @@ class SocialButton extends React.Component {
 
             },
             topLayerStyle: {
-                // border: "2px solid " + this.props.borderColor,
+
                 position: 'relative',
                 left: 0,
                 top: 0,
@@ -33,9 +33,9 @@ class SocialButton extends React.Component {
                 transition: 'all .15s ease-out',
                 color: this.props.labelColor
             },
-            buttonBorderLeft: {
-                left: '-2px',
-                bottom: '-2px',
+            projectBorderLeft: {
+                left: '0px',
+                bottom: '0px',
                 width: '2px',
                 height: 0,
                 position: 'absolute',
@@ -43,27 +43,27 @@ class SocialButton extends React.Component {
                 transition: 'all .25s ease-out'
             },
 
-            buttonBorderRight: {
-                right: '-2px',
-                top: '-2px',
+            projectBorderRight: {
+                right: '0px',
+                top: '0px',
                 width: '2px',
                 height: 0,
                 position: 'absolute',
                 backgroundColor: this.props.transitionColor,
                 transition: 'all .25s ease-out'
             },
-            buttonBorderTop: {
-                left: '-2px',
-                top: '-2px',
+            projectBorderTop: {
+                left: '0px',
+                top: '0px',
                 width: 0,
                 height: '2px',
                 position: 'absolute',
                 backgroundColor: this.props.transitionColor,
                 transition: 'all .25s ease-out'
             },
-            buttonBorderBottom: {
-                right: '-2px',
-                bottom: '-2px',
+            projectBorderBottom: {
+                right: '0px',
+                bottom: '0px',
                 width: 0,
                 height: '2px',
                 position: 'absolute',
@@ -101,23 +101,23 @@ class SocialButton extends React.Component {
                 ...this.state.labelStyle,
                 color: this.props.transitionColor,
             },
-            buttonBorderBottom: {
-                ...this.state.buttonBorderBottom,
+            projectBorderBottom: {
+                ...this.state.projectBorderBottom,
                 width: 'calc(100% + 2px)',
                 backgroundColor: this.props.transitionColor,
             },
-            buttonBorderTop: {
-                ...this.state.buttonBorderTop,
+            projectBorderTop: {
+                ...this.state.projectBorderTop,
                 width: 'calc(100% + 2px)',
                 backgroundColor: this.props.transitionColor,
             },
-            buttonBorderLeft: {
-                ...this.state.buttonBorderLeft,
+            projectBorderLeft: {
+                ...this.state.projectBorderLeft,
                 height: 'calc(100% + 2px)',
                 backgroundColor: this.props.transitionColor,
             },
-            buttonBorderRight: {
-                ...this.state.buttonBorderRight,
+            projectBorderRight: {
+                ...this.state.projectBorderRight,
                 height: 'calc(100% + 2px)',
                 backgroundColor: this.props.transitionColor,
             }
@@ -130,23 +130,23 @@ class SocialButton extends React.Component {
                 ...this.state.labelStyle,
                 color: this.props.labelColor,
             },
-            buttonBorderBottom: {
-                ...this.state.buttonBorderBottom,
+            projectBorderBottom: {
+                ...this.state.projectBorderBottom,
                 width: 0,
                 backgroundColor: 'white',
             },
-            buttonBorderTop: {
-                ...this.state.buttonBorderTop,
+            projectBorderTop: {
+                ...this.state.projectBorderTop,
                 width: 0,
                 backgroundColor: 'white',
             },
-            buttonBorderLeft: {
-                ...this.state.buttonBorderLeft,
+            projectBorderLeft: {
+                ...this.state.projectBorderLeft,
                 height: 0,
                 backgroundColor: 'white',
             },
-            buttonBorderRight: {
-                ...this.state.buttonBorderRight,
+            projectBorderRight: {
+                ...this.state.projectBorderRight,
                 height: 0,
                 backgroundColor: 'white',
             }
@@ -156,7 +156,7 @@ class SocialButton extends React.Component {
 
     render() {
 
-        const { buttonStyle, topLayerStyle, labelStyle, buttonBorderBottom, buttonBorderLeft, buttonBorderRight, buttonBorderTop } = this.state
+        const { buttonStyle, topLayerStyle, labelStyle, projectBorderBottom, projectBorderLeft, projectBorderRight, projectBorderTop } = this.state
 
         return (
             <div
@@ -166,17 +166,17 @@ class SocialButton extends React.Component {
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseLeave}>
 
-                <div className="social-top" style={topLayerStyle} >
+                <div className="project-top" style={topLayerStyle} >
 
-                    <div className="social-label" style={labelStyle}>{this.props.children}</div>
+                    <div className="project-label" style={labelStyle}>{this.props.children}</div>
 
-                    <div style={buttonBorderLeft} className="social-button-border social-button-border-left" />
+                    <div style={projectBorderLeft} className="project-border project-border-left" />
 
-                    <div style={buttonBorderTop} className="social-button-border social-button-border-top" />
+                    <div style={projectBorderTop} className="project-border project-border-top" />
 
-                    <div style={buttonBorderRight} className="social-button-border social-button-border-right" />
+                    <div style={projectBorderRight} className="project-border project-border-right" />
 
-                    <div style={buttonBorderBottom} className="social-button-border social-button-border-bottom" />
+                    <div style={projectBorderBottom} className="project-border project-border-bottom" />
 
                 </div>
 
@@ -185,4 +185,4 @@ class SocialButton extends React.Component {
     }
 }
 
-export default SocialButton;
+export default ProjectDisplay;

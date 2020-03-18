@@ -5,7 +5,8 @@ class SectionWrapper extends React.Component {
     super(props);
     this.state = {
       separatorStyle: {
-        position: 'fixed',
+        position: 'absolute',
+        top: '10px',
         zIndex: 4,
         height: '2px',
         width: '10%',
@@ -43,17 +44,17 @@ class SectionWrapper extends React.Component {
         display: "inline-block",
         textDecoration: "none",
         position: "relative",
-        top: '50%',
-        transform: 'translateY(-50%)',
-        width: '95%',
-        height: '95%',
+        // top: '50%',
+        // transform: 'translateY(-50%)',
+        width: '100%',
+        height: '100%',
         // padding: '24px 34px 22px 34px',
         transition: 'all .5s ease-in-out',
       },
       borderLeft: {
-        left: '5px',
+        left: '15px',
         zIndex: 2,
-        bottom: '-5px',
+        bottom: '15px',
         width: '2px',
         height: 0,
         position: 'absolute',
@@ -63,8 +64,8 @@ class SectionWrapper extends React.Component {
       },
 
       borderRight: {
-        right: '-5px',
-        top: '5px',
+        right: '15px',
+        top: '15px',
         zIndex: 2,
         width: '2px',
         height: 0,
@@ -74,8 +75,8 @@ class SectionWrapper extends React.Component {
         transition: 'all .8s ease-out'
       },
       borderTop: {
-        left: '5px',
-        top: '4px',
+        left: '15px',
+        top: '15px',
         width: 0,
         height: '2px',
         position: 'absolute',
@@ -85,8 +86,8 @@ class SectionWrapper extends React.Component {
         transition: 'all .8s ease-out'
       },
       borderBottom: {
-        right: '-5px',
-        bottom: '-6px',
+        right: '15px',
+        bottom: '15px',
         width: 0,
         height: '2px',
         position: 'absolute',
@@ -149,25 +150,25 @@ class SectionWrapper extends React.Component {
       },
       borderBottom: {
         ...this.state.borderBottom,
-        width: '100%',
+        width: ' calc(100% - 30px)',
         backgroundColor: this.props.transitionColor,
         opacity: 1,
       },
       borderTop: {
         ...this.state.borderTop,
-        width: '100%',
+        width: ' calc(100% - 30px)',
         backgroundColor: this.props.transitionColor,
         opacity: 1,
       },
       borderLeft: {
         ...this.state.borderLeft,
-        height: '100%',
+        height: ' calc(100% - 30px)',
         backgroundColor: this.props.transitionColor,
         opacity: 1,
       },
       borderRight: {
         ...this.state.borderRight,
-        height: '100%',
+        height: ' calc(100% - 30px)',
         backgroundColor: this.props.transitionColor,
         opacity: 1,
       }
@@ -182,31 +183,33 @@ class SectionWrapper extends React.Component {
     const { separatorStyle, faderStyle, borderBottom, borderLeft, borderRight, borderTop, wrapperStyle, SectionWrapperStyle } = this.state
 
     return (
-      <div
-        id={this.props.idSet}
-        className="section-wrapper"
-        style={SectionWrapperStyle}
-        onMouseOver={this.onMouseOver}
-        onMouseLeave={this.onMouseLeave}
-      >
+      <div className="border-wrapper" style={wrapperStyle}>
+        <div
+          id={this.props.idSet}
+          className="section-wrapper"
+          style={SectionWrapperStyle}
+          onMouseOver={this.onMouseOver}
+        // This makes it so a section is de-emphasized -- however, this may not be preferencial.
+        // onMouseLeave={this.onMouseLeave}
+        >
 
-        {
-          this.props.children ?
-            <div className="section-children-wrapper" >
-              {this.props.children}
-            </div>
-            :
-            <></>
-        }
-
-
-
-
+          {
+            this.props.children ?
+              <div className="section-children-wrapper" >
+                {this.props.children}
+              </div>
+              :
+              <></>
+          }
 
 
-        <div className="section-fader" style={faderStyle}></div>
-        <div className="border-wrapper" style={wrapperStyle}>
-          {/* <div className="top-section-separator" style={separatorStyle}></div> */}
+
+
+
+
+          <div className="section-fader" style={faderStyle}></div>
+
+          <div className="top-section-separator" style={separatorStyle}></div>
 
           <div className="bottom-section-separator" style={separatorStyle}></div>
           <div style={borderLeft} className="border border-left" />
