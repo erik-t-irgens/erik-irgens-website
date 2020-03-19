@@ -6,6 +6,17 @@ import Button from '../../../global/Button'
 import ProjectDisplay from "./components/ProjectDisplay"
 import ScrollTo from 'react-scroll-into-view'
 
+
+import Image1 from "../../../Backgrounds/1.jpg"
+import Image2 from "../../../Backgrounds/2.jpg"
+import Image3 from "../../../Backgrounds/3.jpg"
+import Image4 from "../../../Backgrounds/4.jpg"
+import Image6 from "../../../Backgrounds/6.jpg"
+import Image7 from "../../../Backgrounds/7.jpg"
+import Image8 from "../../../Backgrounds/8.jpg"
+import Image9 from "../../../Backgrounds/9.jpg"
+
+
 import Image5 from "../../../Backgrounds/5.jpg"
 
 class PortfolioSection extends React.Component {
@@ -39,9 +50,9 @@ class PortfolioSection extends React.Component {
                     borderColor="white"
                     labelColor="white" transitionColor="#ff4242"
                     projectName='Word Visualizer'
-                    projectImage="https://raw.githubusercontent.com/erik-t-irgens/word-visualizer/master/public/favicon.ico"
+                    projectImage={Image1}
 
-                    iframeLink='https://erikirgens.com'
+                    projectDescription="An application intended to allow users to search for relevant words related to their initial search, intended to display this information with data visualization libraries and frameworks. This tool's intended audience are poets and composers, who may need a thesaurus."
                     githubLink='https://github.com/erik-t-irgens/word-visualizer'
                 >
                 </ProjectDisplay>
@@ -49,9 +60,10 @@ class PortfolioSection extends React.Component {
                     borderColor="white"
                     labelColor="white" transitionColor="#ff4242"
                     projectName='Circles'
-                    projectImage="https://lh3.googleusercontent.com/proxy/hNK1c-TViPUxCUeL5rOZLBvDjoe6Pf-zso8EP5S6B7WNFQVu3O7YL89phLpWyV6l7z2ZzgLUI1wzt4PTuaZVBYY"
+                    projectImage={Image2}
 
-                    iframeLink='https://circlesapp.azurewebsites.net'
+
+                    projectDescription='https://circlesapp.azurewebsites.net'
                     githubLink='https://github.com/erik-t-irgens/CIRCLES_MVC'
                 >
                 </ProjectDisplay>
@@ -60,9 +72,10 @@ class PortfolioSection extends React.Component {
                     borderColor="white"
                     labelColor="white" transitionColor="#ff4242"
                     projectName='Pokedex'
-                    projectImage="https://slack-files2.s3-us-west-2.amazonaws.com/avatars/2018-08-03/410145857620_d507b9b2cd0b86329b48_512.png"
+                    projectImage={Image3}
 
-                    iframeLink='http://erik-t-irgens.github.io/pokedex/'
+
+                    projectDescription='http://erik-t-irgens.github.io/pokedex/'
                     githubLink='https://github.com/erik-t-irgens/pokedex'
                 >
                 </ProjectDisplay>
@@ -71,9 +84,10 @@ class PortfolioSection extends React.Component {
                     borderColor="white"
                     labelColor="white" transitionColor="#ff4242"
                     projectName='Doctor Lookup'
-                    projectImage="https://slack-files2.s3-us-west-2.amazonaws.com/avatars/2018-08-03/410145857620_d507b9b2cd0b86329b48_512.png"
+                    projectImage={Image4}
 
-                    iframeLink='https://erik-t-irgens.github.io/doctor-lookup'
+
+                    projectDescription='https://erik-t-irgens.github.io/doctor-lookup'
                     githubLink='https://github.com/erik-t-irgens/doctor-lookup'
                 >
                 </ProjectDisplay>
@@ -82,9 +96,9 @@ class PortfolioSection extends React.Component {
                     borderColor="white"
                     labelColor="white" transitionColor="#ff4242"
                     projectName='Pizza Delivery'
-                    projectImage="https://slack-files2.s3-us-west-2.amazonaws.com/avatars/2018-08-03/410145857620_d507b9b2cd0b86329b48_512.png"
+                    projectImage={Image6}
 
-                    iframeLink='https://erik-t-irgens.github.io/pizza-delivery/'
+                    projectDescription='https://erik-t-irgens.github.io/pizza-delivery/'
                     githubLink='https://github.com/erik-t-irgens/pizza-delivery'
                 >
                 </ProjectDisplay>

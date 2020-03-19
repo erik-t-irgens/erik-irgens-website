@@ -6,14 +6,14 @@ class ProjectDisplay extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            iframeVisible: false,
+            descriptionVisible: false,
             projectStyle: {
                 backgroundImage: `url(${this.props.projectImage})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                width: '200px',
-                height: '200px',
+                width: '20vh',
+                height: '20vh',
                 transition: 'all .5s ease-in-out'
             }
         }
@@ -22,54 +22,66 @@ class ProjectDisplay extends React.Component {
     componentDidMount = () => {
         this.setState({
             projectName: this.props.projectName,
-            iframeLink: this.props.iframeLink,
             githubLink: this.props.githubLink,
+            projectDescription: this.props.projectDescription,
         })
     }
 
     onClick = () => {
         this.setState({
-            iframeVisible: true,
-            projectStyle: {
-                ...this.state.projectStyle,
-                width: '50vh',
-                height: '50vh',
-            }
+            descriptionVisible: !this.state.descriptionVisible,
+
         })
+        if (!this.state.descriptionVisible) {
+            this.setState({
+                projectStyle: {
+                    ...this.state.projectStyle,
+                    width: '50vh',
+                    height: '50vh',
+                    backgroundImage: null,
+                    backgroundColor: 'gray'
+                }
+            })
+        } else {
+            this.setState({
+                projectStyle: {
+                    ...this.state.projectStyle,
+                    width: '20vh',
+                    height: '20vh',
+                    backgroundImage: `url(${this.props.projectImage})`
+                }
+            })
+        }
     }
 
-    onCloseIframe = () => {
-        alert('this is working')
-        this.setState({
-            iframeVisible: false,
-            projectStyle: {
-                ...this.state.projectStyle,
-                width: '200px',
-                height: '200px',
-            }
-        })
-    }
+
 
     render() {
-        const { iframeVisible, projectName, projectStyle, iframeLink, githubLink } = this.state
+        const { descriptionVisible, projectName, projectStyle, githubLink, projectDescription } = this.state
 
 
         return (
             <div style={projectStyle}
                 className="project"
                 onClick={this.onClick}>
-                {iframeVisible && iframeLink ?
+                {descriptionVisible ?
                     <div>
 
-                        <iframe title={projectName} className='iframe' src={iframeLink} height='100%' width='100%'>
-                            <p>Your browser doesn't seem to support iframes. To view the project itself, please visit: <a href={iframeLink}>{iframeLink}</a></p>
-                        </iframe>
+
+                        <h3 className='project-name'>
+                            {projectName}
+                        </h3>
+                        <h4 className='project-description'>{projectDescription}</h4>
+                        <GithubButton
+
+                            functionality={githubLink}
+                            borderColor="white" labelColor="white"><img className="social-icon-image" style={{ width: '25px', color: 'white' }} src={github} alt="Link to project on github"></img></GithubButton>
                     </div>
 
                     :
                     <div
                     >
-                        <h3 style={{ position: 'absolute', left: '50%', transform: 'translatex(-50%)', marginTop: '20px' }}>
+                        <h3 className='project-name'>
                             {projectName}
                         </h3>
                         <GithubButton
@@ -78,9 +90,7 @@ class ProjectDisplay extends React.Component {
                             borderColor="white" labelColor="white"><img className="social-icon-image" style={{ width: '25px', color: 'white' }} src={github} alt="Link to project on github"></img></GithubButton>
                     </div>
                 }
-                {iframeVisible ?
-                    <div className='close-iframe-button' onClick={this.onCloseIframe}><p>X</p></div> :
-                    <></>}
+
 
 
             </div>

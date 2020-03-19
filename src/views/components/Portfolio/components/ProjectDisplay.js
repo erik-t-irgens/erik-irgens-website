@@ -12,7 +12,7 @@ class ProjectDisplay extends React.Component {
                 textDecoration: "none",
                 position: "relative",
                 zIndex: 3,
-                cursor: 'pointer',
+
                 transition: 'all .05s ease-in-out',
 
             },
@@ -25,7 +25,7 @@ class ProjectDisplay extends React.Component {
                 transition: 'all .5s ease-in-out',
             },
             labelStyle: {
-                fontFamily: "'Montserrat', sans-serif",
+
                 fontWeight: 600,
                 fontSize: '10px',
                 lineHeight: '100%',
@@ -154,8 +154,8 @@ class ProjectDisplay extends React.Component {
                     <div className="project-label" style={labelStyle}>
                         <Project
                             projectName={this.props.projectName} projectImage={this.props.projectImage}
-                            iframeVisible={this.state.visibility}
-                            iframeLink={this.props.iframeLink}
+                            descriptionVisible={this.state.visibility}
+                            projectDescription={this.props.projectDescription}
                             githubLink={this.props.githubLink}
                         >
                         </Project>
