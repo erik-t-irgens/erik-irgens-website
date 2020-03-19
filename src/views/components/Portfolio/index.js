@@ -12,9 +12,7 @@ import Image2 from "../../../Backgrounds/2.jpg"
 import Image3 from "../../../Backgrounds/3.jpg"
 import Image4 from "../../../Backgrounds/4.jpg"
 import Image6 from "../../../Backgrounds/6.jpg"
-import Image7 from "../../../Backgrounds/7.jpg"
-import Image8 from "../../../Backgrounds/8.jpg"
-import Image9 from "../../../Backgrounds/9.jpg"
+
 
 
 import Image5 from "../../../Backgrounds/5.jpg"
