@@ -34,17 +34,11 @@ class MainPage extends React.Component {
 
         <Header></Header>
         <ScrollSnapView>
-          <WelcomeSection
-          >
-
-          </WelcomeSection>
-
-
-          <AboutSection ></AboutSection>
-
-          <PortfolioSection></PortfolioSection>
-          <BlogSection></BlogSection>
-          <ContactSection></ContactSection>
+          <WelcomeSection />
+          <AboutSection />
+          <PortfolioSection />
+          <BlogSection />
+          <ContactSection />
         </ScrollSnapView>
       </div>
     );

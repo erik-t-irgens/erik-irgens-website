@@ -21,7 +21,7 @@ class WelcomeSection extends React.Component {
             paragraphStyle: {
                 color: 'black',
                 position: 'relative',
-                marginTop: '20%',
+                marginTop: '20vh',
                 marginBottom: '40px',
                 opacity: 0,
                 // transform: 'translate(0, 100px)',

@@ -20,8 +20,7 @@ class SocialButton extends React.Component {
                 position: 'relative',
                 left: 0,
                 top: 0,
-
-                padding: '20px 20px 20px 20px',
+                padding: '14px 14px 14px 14px',
                 transition: 'all .5s ease-in-out',
             },
             labelStyle: {
