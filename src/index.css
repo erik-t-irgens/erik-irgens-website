@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display&display=swap');
-@import url("https://fonts.googleapis.com/css?family=Major+Mono+Display|Montserrat:500i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Major+Mono+Display|Montserrat&display=swap");
 
 body {
     background-color: black;
@@ -269,6 +269,21 @@ height: 100vh;
   
 }
 
+/* PORTFOLIO SECTION */
+
+
+.close-iframe-button {
+  position: absolute;
+  z-index: 10000;
+  right: -20px;
+  top: -20px;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  background-color: #ff4242;
+  color: white;
+
+}
 
 
 

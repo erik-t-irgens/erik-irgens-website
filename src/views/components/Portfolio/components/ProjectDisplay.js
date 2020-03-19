@@ -1,18 +1,19 @@
 import React from "react";
 
+import Project from './Project'
+
 class ProjectDisplay extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            buttonStyle: {
+            visibility: false,
+            projectButtonStyle: {
                 display: "inline-block",
                 textDecoration: "none",
                 position: "relative",
                 zIndex: 3,
                 cursor: 'pointer',
                 transition: 'all .05s ease-in-out',
-                bottom: 0,
-                padding: '2px'
 
             },
             topLayerStyle: {
@@ -20,18 +21,19 @@ class ProjectDisplay extends React.Component {
                 position: 'relative',
                 left: 0,
                 top: 0,
-                padding: '14px 14px 14px 14px',
+                // padding: '14px 14px 14px 14px',
                 transition: 'all .5s ease-in-out',
             },
             labelStyle: {
-                fontFamily: "'Major Mono Display', monospace",
+                fontFamily: "'Montserrat', sans-serif",
                 fontWeight: 600,
                 fontSize: '10px',
                 lineHeight: '100%',
-                letterSpacing: '0px',
+                letterSpacing: '1px',
                 textAlign: 'center',
                 transition: 'all .15s ease-out',
-                color: this.props.labelColor
+                color: this.props.labelColor,
+
             },
             projectBorderLeft: {
                 left: '0px',
@@ -75,25 +77,7 @@ class ProjectDisplay extends React.Component {
         }
     }
 
-    onMouseDown = () => {
-        this.setState({
-            buttonStyle: {
-                ...this.state.buttonStyle,
-                transform: 'scale(.99)'
-            }
-        })
-        window.open(this.props.functionality, '_blank')
-    }
 
-    onMouseUp = () => {
-        this.setState({
-            buttonStyle: {
-                ...this.state.buttonStyle,
-                transform: 'scale(1)'
-
-            }
-        })
-    }
 
     onMouseOver = () => {
         this.setState({
@@ -103,22 +87,22 @@ class ProjectDisplay extends React.Component {
             },
             projectBorderBottom: {
                 ...this.state.projectBorderBottom,
-                width: 'calc(100% + 2px)',
+                width: 'calc(100% - 2px)',
                 backgroundColor: this.props.transitionColor,
             },
             projectBorderTop: {
                 ...this.state.projectBorderTop,
-                width: 'calc(100% + 2px)',
+                width: 'calc(100% - 2px)',
                 backgroundColor: this.props.transitionColor,
             },
             projectBorderLeft: {
                 ...this.state.projectBorderLeft,
-                height: 'calc(100% + 2px)',
+                height: 'calc(100% - 2px)',
                 backgroundColor: this.props.transitionColor,
             },
             projectBorderRight: {
                 ...this.state.projectBorderRight,
-                height: 'calc(100% + 2px)',
+                height: 'calc(100% - 2px)',
                 backgroundColor: this.props.transitionColor,
             }
         })
@@ -156,19 +140,26 @@ class ProjectDisplay extends React.Component {
 
     render() {
 
-        const { buttonStyle, topLayerStyle, labelStyle, projectBorderBottom, projectBorderLeft, projectBorderRight, projectBorderTop } = this.state
+        const { projectButtonStyle, topLayerStyle, labelStyle, projectBorderBottom, projectBorderLeft, projectBorderRight, projectBorderTop } = this.state
 
         return (
             <div
-                onMouseDown={this.onMouseDown}
-                onMouseUp={this.onMouseUp}
-                className="button" style={buttonStyle}
+
+                className="button" style={projectButtonStyle}
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseLeave}>
 
                 <div className="project-top" style={topLayerStyle} >
 
-                    <div className="project-label" style={labelStyle}>{this.props.children}</div>
+                    <div className="project-label" style={labelStyle}>
+                        <Project
+                            projectName={this.props.projectName} projectImage={this.props.projectImage}
+                            iframeVisible={this.state.visibility}
+                            iframeLink={this.props.iframeLink}
+                            githubLink={this.props.githubLink}
+                        >
+                        </Project>
+                    </div>
 
                     <div style={projectBorderLeft} className="project-border project-border-left" />
 
