@@ -18,7 +18,7 @@ class SectionWrapper extends React.Component {
       },
 
       faderStyle: {
-        // display: "inline-block",
+
         textDecoration: "none",
         position: "absolute",
         backgroundColor: "gray",
