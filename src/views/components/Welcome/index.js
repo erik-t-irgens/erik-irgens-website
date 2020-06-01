@@ -74,6 +74,8 @@ class WelcomeSection extends React.Component {
 
     }
 
+
+
     render() {
 
         const { paragraphStyle, sectionActive, spanStyle, buttonStyle } = this.state

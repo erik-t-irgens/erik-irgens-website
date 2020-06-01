@@ -48,7 +48,7 @@ class PortfolioSection extends React.Component {
                     borderColor="white"
                     labelColor="white" transitionColor="#ff4242"
                     projectName='Word Visualizer'
-                    projectImage={Image1}
+                    // projectImage={Image1}
 
                     projectDescription="An application intended to allow users to search for relevant words related to their initial search, intended to display this information with data visualization libraries and frameworks. This tool's intended audience are poets and composers, who may need a thesaurus."
                     githubLink='https://github.com/erik-t-irgens/word-visualizer'
@@ -58,7 +58,7 @@ class PortfolioSection extends React.Component {
                     borderColor="white"
                     labelColor="white" transitionColor="#ff4242"
                     projectName='Circles'
-                    projectImage={Image2}
+                    // projectImage={Image2}
 
 
                     projectDescription='https://circlesapp.azurewebsites.net'
@@ -70,7 +70,7 @@ class PortfolioSection extends React.Component {
                     borderColor="white"
                     labelColor="white" transitionColor="#ff4242"
                     projectName='Pokedex'
-                    projectImage={Image3}
+                    // projectImage={Image3}
 
 
                     projectDescription='http://erik-t-irgens.github.io/pokedex/'
@@ -82,7 +82,7 @@ class PortfolioSection extends React.Component {
                     borderColor="white"
                     labelColor="white" transitionColor="#ff4242"
                     projectName='Doctor Lookup'
-                    projectImage={Image4}
+                    // projectImage={Image4}
 
 
                     projectDescription='https://erik-t-irgens.github.io/doctor-lookup'
@@ -94,7 +94,7 @@ class PortfolioSection extends React.Component {
                     borderColor="white"
                     labelColor="white" transitionColor="#ff4242"
                     projectName='Pizza Delivery'
-                    projectImage={Image6}
+                    // projectImage={Image6}
 
                     projectDescription='https://erik-t-irgens.github.io/pizza-delivery/'
                     githubLink='https://github.com/erik-t-irgens/pizza-delivery'
