@@ -6,7 +6,7 @@ class SectionTitle extends React.Component {
         super(props);
         this.state = {
 
-            titleVisible: false,
+            titleVisible: this.props.visibility,
             visibleStyle: {
                 opacity: 1,
                 transform: 'translate(0%, 0%)',
@@ -24,7 +24,8 @@ class SectionTitle extends React.Component {
     }
 
 
-    componentDidUpdate = () => {
+
+    componentWillReceiveProps = () => {
         if (!this.state.titleVisible) {
             this.setState({ titleVisible: this.props.visibility })
         }

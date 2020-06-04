@@ -15,6 +15,13 @@ class BlogSection extends React.Component {
         };
     }
 
+    componentWillReceiveProps = () => {
+        if (this.props.currentPos >= this.props.minRange && this.props.currentPos < this.props.maxRange) {
+            this.setSectionActive()
+            console.log("ACTIVATED")
+        }
+
+    }
     setSectionActive = () => {
         this.setState({ sectionActive: true })
     }
@@ -27,6 +34,7 @@ class BlogSection extends React.Component {
 
 
             <SectionWrapper
+                sectionActive={this.state.sectionActive}
                 idSet="blog-section"
                 functionality={this.setSectionActive}
                 className="section-wrapper"

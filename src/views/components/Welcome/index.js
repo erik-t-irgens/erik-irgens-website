@@ -39,6 +39,13 @@ class WelcomeSection extends React.Component {
     }
 
 
+    componentWillReceiveProps = () => {
+        if (this.props.currentPos <= this.props.minRange && this.props.currentPos < this.props.maxRange) {
+            this.setSectionActive()
+            console.log("ACTIVATED")
+        }
+
+    }
 
     setSectionActive = () => {
         this.setState({ sectionActive: true })
@@ -74,6 +81,8 @@ class WelcomeSection extends React.Component {
 
     }
 
+
+
     render() {
 
         const { paragraphStyle, sectionActive, spanStyle, buttonStyle } = this.state
@@ -81,6 +90,7 @@ class WelcomeSection extends React.Component {
 
 
             <SectionWrapper
+                sectionActive={this.state.sectionActive}
                 className="section-wrapper welcome"
                 idSet="welcome-section"
                 functionality={this.setSectionActive}

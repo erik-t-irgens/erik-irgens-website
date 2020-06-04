@@ -18,7 +18,7 @@ class SectionWrapper extends React.Component {
       },
 
       faderStyle: {
-        // display: "inline-block",
+
         textDecoration: "none",
         position: "absolute",
         backgroundColor: "gray",
@@ -95,50 +95,62 @@ class SectionWrapper extends React.Component {
         backgroundColor: 'white',
         opacity: 0,
         transition: 'all .8s ease-out'
-      }
+      },
+      sectionActive: false
 
 
     }
   }
 
-  onMouseLeave = () => {
-    this.setState({
-      separatorStyle: {
-        ...this.state.separatorStyle,
-        width: 0
-      },
-      faderStyle: {
-        ...this.state.faderStyle,
-        opacity: 1
-      },
-      borderBottom: {
-        ...this.state.borderBottom,
-        width: 0,
-        backgroundColor: 'white',
-        opacity: 0
-      },
-      borderTop: {
-        ...this.state.borderTop,
-        width: 0,
-        backgroundColor: 'white',
-        opacity: 0
-      },
-      borderLeft: {
-        ...this.state.borderLeft,
-        height: 0,
-        backgroundColor: 'white',
-        opacity: 0
-      },
-      borderRight: {
-        ...this.state.borderRight,
-        height: 0,
-        backgroundColor: 'white',
-        opacity: 0
-      }
-    })
+  componentDidUpdate = () => {
+
+    if (this.props.sectionActive && this.state.sectionActive === false) {
+
+      this.handleFocusSection()
+      this.setState({ sectionActive: true })
+    }
   }
 
-  onMouseOver = () => {
+  // This function has been deprecated, as it is no longer needed. However, it is used to "unfocus" a section when the mouse leaves the section by setting the style state back to initial state.
+
+  // onMouseLeave = () => {
+  //   this.setState({
+  //     separatorStyle: {
+  //       ...this.state.separatorStyle,
+  //       width: 0
+  //     },
+  //     faderStyle: {
+  //       ...this.state.faderStyle,
+  //       opacity: 1
+  //     },
+  //     borderBottom: {
+  //       ...this.state.borderBottom,
+  //       width: 0,
+  //       backgroundColor: 'white',
+  //       opacity: 0
+  //     },
+  //     borderTop: {
+  //       ...this.state.borderTop,
+  //       width: 0,
+  //       backgroundColor: 'white',
+  //       opacity: 0
+  //     },
+  //     borderLeft: {
+  //       ...this.state.borderLeft,
+  //       height: 0,
+  //       backgroundColor: 'white',
+  //       opacity: 0
+  //     },
+  //     borderRight: {
+  //       ...this.state.borderRight,
+  //       height: 0,
+  //       backgroundColor: 'white',
+  //       opacity: 0
+  //     }
+  //   })
+  // }
+
+  handleFocusSection = () => {
     this.setState({
       separatorStyle: {
         ...this.state.separatorStyle,
@@ -188,7 +200,8 @@ class SectionWrapper extends React.Component {
           id={this.props.idSet}
           className="section-wrapper"
           style={SectionWrapperStyle}
-          onMouseOver={this.onMouseOver}
+          onMouseEnter={this.handleFocusSection}
+
         // This makes it so a section is de-emphasized -- however, this may not be preferencial.
         // onMouseLeave={this.onMouseLeave}
         >
