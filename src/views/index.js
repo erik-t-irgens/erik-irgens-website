@@ -6,7 +6,7 @@ import PortfolioSection from "./components/Portfolio/index"
 import Header from "../global/Header/index"
 import ScrollSnapView from '../global/ScrollSnapView'
 
-import { useScrollPosition } from '@n8tb1t/use-scroll-position'
+// import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 // import ScrollTo from 'react-scroll-into-view'
 
@@ -30,17 +30,16 @@ class MainPage extends React.Component {
 
   }
 
-  setScrollState = (position) => {
-    this.setState({
-      scrollPosition: position
-    })
-  }
+  setScrollState = debounce((position) => {
 
+    if (position !== this.state.scrollPosition) {
+      this.setState({
+        scrollPosition: position
+      })
+    }
+    console.log("FINAL SCROLL POSITION: " + position, this.state.scrollPosition)
+  }, 100)
 
-
-  listenToScrollEvent = () => {
-
-  };
 
   render() {
     return (
@@ -48,11 +47,11 @@ class MainPage extends React.Component {
 
         <Header></Header>
         <ScrollSnapView scrollFunction={this.setScrollState}>
-          <WelcomeSection currentPost={this.state.currentScrollPosition} />
-          <AboutSection currentPost={this.state.currentScrollPosition} />
-          <PortfolioSection currentPost={this.state.currentScrollPosition} />
-          <BlogSection currentPost={this.state.currentScrollPosition} />
-          <ContactSection currentPost={this.state.currentScrollPosition} />
+          <WelcomeSection currentPos={this.state.scrollPosition} minRange={0} maxRange={25} />
+          <AboutSection currentPos={this.state.scrollPosition} minRange={25} maxRange={50} />
+          <PortfolioSection currentPos={this.state.scrollPosition} minRange={50} maxRange={75} />
+          <BlogSection currentPos={this.state.scrollPosition} minRange={75} maxRange={100} />
+          <ContactSection currentPos={this.state.scrollPosition} minRange={100} maxRange={125} />
         </ScrollSnapView>
       </div>
     );

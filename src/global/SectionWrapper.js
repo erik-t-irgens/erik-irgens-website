@@ -95,9 +95,19 @@ class SectionWrapper extends React.Component {
         backgroundColor: 'white',
         opacity: 0,
         transition: 'all .8s ease-out'
-      }
+      },
+      sectionActive: false
 
 
+    }
+  }
+
+  componentDidUpdate = () => {
+
+    if (this.props.sectionActive && this.state.sectionActive === false) {
+
+      this.handleFocusSection()
+      this.setState({ sectionActive: true })
     }
   }
 

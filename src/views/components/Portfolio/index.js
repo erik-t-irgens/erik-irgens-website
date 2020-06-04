@@ -25,6 +25,14 @@ class PortfolioSection extends React.Component {
         };
     }
 
+    componentWillReceiveProps = () => {
+        if (this.props.currentPos >= this.props.minRange && this.props.currentPos < this.props.maxRange) {
+            this.setSectionActive()
+            console.log("ACTIVATED")
+        }
+
+    }
+
     setSectionActive = () => {
         this.setState({ sectionActive: true })
     }
@@ -35,6 +43,7 @@ class PortfolioSection extends React.Component {
 
 
             <SectionWrapper
+                sectionActive={this.state.sectionActive}
                 functionality={this.setSectionActive}
                 idSet="portfolio-section"
                 className="section-wrapper"
