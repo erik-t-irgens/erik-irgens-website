@@ -7,11 +7,11 @@ import ProjectDisplay from "./components/ProjectDisplay"
 import ScrollTo from 'react-scroll-into-view'
 
 
-import Image1 from "../../../Backgrounds/1.jpg"
-import Image2 from "../../../Backgrounds/2.jpg"
-import Image3 from "../../../Backgrounds/3.jpg"
-import Image4 from "../../../Backgrounds/4.jpg"
-import Image6 from "../../../Backgrounds/6.jpg"
+// import Image1 from "../../../Backgrounds/1.jpg"
+// import Image2 from "../../../Backgrounds/2.jpg"
+// import Image3 from "../../../Backgrounds/3.jpg"
+// import Image4 from "../../../Backgrounds/4.jpg"
+// import Image6 from "../../../Backgrounds/6.jpg"
 
 
 
