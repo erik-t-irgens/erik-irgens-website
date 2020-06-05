@@ -23,25 +23,21 @@ class ContactSection extends React.Component {
     }
 
     componentWillReceiveProps = () => {
-        if (this.props.currentPos >= this.props.minRange && this.props.currentPos < this.props.maxRange) {
+        if (this.props.currentPos >= this.props.minRange && this.props.currentPos < this.props.maxRange && !this.state.sectionActive) {
             this.setSectionActive()
-            console.log("ACTIVATED")
+            console.log("ACTIVATED CONTACT")
         }
 
     }
 
     setSectionActive = () => {
-        this.setState({ sectionActive: true })
-        setTimeout(() => {
-            this.setState({
-                socialButtonGridStyle: {
-                    ...this.state.socialButtonGridStyle,
-                    opacity: 1,
-                    transform: 'translate(-50%, 0%)',
-                },
-
-            })
-        }, 1000)
+        this.setState({
+            sectionActive: true, socialButtonGridStyle: {
+                ...this.state.socialButtonGridStyle,
+                opacity: 1,
+                transform: 'translate(-50%, 0%)',
+            },
+        })
     }
 
     render() {

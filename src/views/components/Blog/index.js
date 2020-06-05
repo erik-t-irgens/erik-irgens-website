@@ -16,9 +16,9 @@ class BlogSection extends React.Component {
     }
 
     componentWillReceiveProps = () => {
-        if (this.props.currentPos >= this.props.minRange && this.props.currentPos < this.props.maxRange) {
+        if (this.props.currentPos >= this.props.minRange && this.props.currentPos < this.props.maxRange && !this.state.sectionActive) {
             this.setSectionActive()
-            console.log("ACTIVATED")
+            console.log("ACTIVATED BLOG")
         }
 
     }

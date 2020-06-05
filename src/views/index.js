@@ -38,7 +38,7 @@ class MainPage extends React.Component {
       })
     }
     console.log("FINAL SCROLL POSITION: " + position, this.state.scrollPosition)
-  }, 100)
+  }, 10)
 
 
   render() {
@@ -47,11 +47,11 @@ class MainPage extends React.Component {
 
         <Header></Header>
         <ScrollSnapView scrollFunction={this.setScrollState}>
-          <WelcomeSection currentPos={this.state.scrollPosition} minRange={0} maxRange={25} />
-          <AboutSection currentPos={this.state.scrollPosition} minRange={25} maxRange={50} />
-          <PortfolioSection currentPos={this.state.scrollPosition} minRange={50} maxRange={75} />
-          <BlogSection currentPos={this.state.scrollPosition} minRange={75} maxRange={100} />
-          <ContactSection currentPos={this.state.scrollPosition} minRange={100} maxRange={125} />
+          <WelcomeSection currentPos={this.state.scrollPosition} minRange={-1} maxRange={24} />
+          <AboutSection currentPos={this.state.scrollPosition} minRange={24} maxRange={49} />
+          <PortfolioSection currentPos={this.state.scrollPosition} minRange={49} maxRange={74} />
+          <BlogSection currentPos={this.state.scrollPosition} minRange={74} maxRange={99} />
+          <ContactSection currentPos={this.state.scrollPosition} minRange={99} maxRange={100} />
         </ScrollSnapView>
       </div>
     );
