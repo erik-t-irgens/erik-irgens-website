@@ -1,6 +1,6 @@
 import React from "react";
 
-class GithubButton extends React.Component {
+class ProjectButton extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -99,4 +99,4 @@ class GithubButton extends React.Component {
     }
 }
 
-export default GithubButton;
+export default ProjectButton;

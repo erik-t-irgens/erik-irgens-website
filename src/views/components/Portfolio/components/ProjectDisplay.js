@@ -6,7 +6,6 @@ class ProjectDisplay extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            enabled: false,
             visibility: false,
             projectButtonStyle: {
                 display: "inline-block",
@@ -82,7 +81,6 @@ class ProjectDisplay extends React.Component {
 
     onMouseOver = () => {
         this.setState({
-            enabled: true,
             labelStyle: {
                 ...this.state.labelStyle,
                 color: this.props.transitionColor,
@@ -155,13 +153,13 @@ class ProjectDisplay extends React.Component {
 
                     <div className="project-label" style={labelStyle}>
                         <Project
-                            projectName={this.props.projectName} projectImage={this.props.projectImage}
+                            projectName={this.props.projectName} projectMedia={this.props.projectMedia}
                             descriptionVisible={this.state.visibility}
                             projectDescription={this.props.projectDescription}
                             githubLink={this.props.githubLink}
-                            enabled={this.state.enabled}
-                        >
-                        </Project>
+                            soundcloudLink={this.props.soundcloudLink}
+                            mediaType={this.props.mediaType}
+                        />
                     </div>
 
                     <div style={projectBorderLeft} className="project-border project-border-left" />

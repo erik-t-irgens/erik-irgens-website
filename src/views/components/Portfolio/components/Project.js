@@ -1,6 +1,8 @@
 import React from "react";
 import github from "../../../../Icons/github.svg"
-import GithubButton from "./GithubButton";
+import soundcloud from "../../../../Icons/soundcloud.svg"
+import ProjectButton from "./ProjectButton";
+import ProjectMedia from './ProjectMedia';
 
 class ProjectDisplay extends React.Component {
     constructor(props) {
@@ -8,12 +10,8 @@ class ProjectDisplay extends React.Component {
         this.state = {
             descriptionVisible: false,
             projectStyle: {
-                backgroundImage: `url(${this.props.projectImage})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                // width: '20vh',
-                height: '53vh',
+                height: '53.8vh',
                 transition: 'all .5s ease-in-out'
             }
         }
@@ -23,6 +21,7 @@ class ProjectDisplay extends React.Component {
         this.setState({
             projectName: this.props.projectName,
             githubLink: this.props.githubLink,
+            soundcloudLink: this.props.soundcloudLink,
             projectDescription: this.props.projectDescription,
         })
     }
@@ -34,62 +33,66 @@ class ProjectDisplay extends React.Component {
             descriptionVisible: true,
 
         })
-        // if (!this.state.descriptionVisible) {
-        //     this.setState({
-        //         projectStyle: {
-        //             ...this.state.projectStyle,
+    }
 
-        //             backgroundImage: null,
-
-        //         }
-        //     })
-        // } else {
-        //     this.setState({
-        //         projectStyle: {
-        //             ...this.state.projectStyle,
-
-        //             backgroundImage: `url(${this.props.projectImage})`
-        //         }
-        //     })
-        // }
+    handleClassName = () => {
+        if (this.state.descriptionVisible) {
+            return 'project-content-grid'
+        } else {
+            return 'project-content-grid-hidden'
+        }
     }
 
 
-
     render() {
-        const { descriptionVisible, projectName, projectStyle, githubLink, projectDescription } = this.state
+        const { projectName, projectStyle, githubLink, projectDescription, soundcloudLink } = this.state
 
 
         return (
             <div style={projectStyle}
                 className="project"
                 onMouseEnter={this.onMouseEnter}>
-                {descriptionVisible ?
-                    <div>
+
+                <div>
 
 
-                        <h3 className='project-name' style={{ width: '100%' }}>
-                            {projectName}
-                        </h3>
-                        <h4 className='project-description' style={{ width: '80%' }}>{projectDescription}</h4>
-                        <GithubButton
+                    <h3 className='project-name' style={{ width: '100%' }}>
+                        {projectName}
+                    </h3>
 
-                            functionality={githubLink}
-                            borderColor="white" labelColor="white"><img className="social-icon-image" style={{ width: '25px', color: 'white' }} src={github} alt="Link to project on github"></img></GithubButton>
+
+                    <div className={this.handleClassName()}>
+                        <div className='project-media'>
+                            <ProjectMedia projectMedia={this.props.projectMedia} mediaType={this.props.mediaType}
+                                soundcloudLink={soundcloudLink ? soundcloudLink : null}
+                            ></ProjectMedia>
+                        </div>
+                        <div className='project-description-column'>
+                            <div className='description-border-left'></div>
+                            <h4 className='project-description'>{projectDescription}</h4>
+                        </div>
+
+
                     </div>
 
-                    :
-                    <div
-                    >
-                        <h3 className='project-name'>
-                            {projectName}
-                        </h3>
-                        <GithubButton
 
+                    {githubLink ?
+                        <ProjectButton
                             functionality={githubLink}
-                            borderColor="white" labelColor="white"><img className="social-icon-image" style={{ width: '25px', color: 'white' }} src={github} alt="Link to project on github"></img></GithubButton>
-                    </div>
-                }
+                            borderColor="white" labelColor="white"><img className="social-icon-image" style={{ width: '25px', color: 'white' }} src={github} alt="Link to project on github"></img>
+                        </ProjectButton>
+                        : null}
+
+                    {soundcloudLink ?
+                        <ProjectButton
+                            functionality={soundcloudLink}
+                            borderColor="white" labelColor="white"><img className="social-icon-image" style={{ width: '25px', color: 'white' }} src={soundcloud} alt="Link to piece on soundcloud"></img>
+                        </ProjectButton>
+                        : null}
+
+
+                </div>
+
 
 
 
