@@ -27,6 +27,7 @@ code {
   /* For some reason, overflow: scroll doesn't detect that the view is shorter than itself.  */
   overflow-y: scroll;
   overflow-x: hidden;
+  scroll-snap-points-y: repeat(100vh);
  
   height: 100vh;
   
@@ -127,7 +128,7 @@ transform: translateY(10px);
   height: 10px;
 }
 .slides::-webkit-scrollbar-thumb {
-  background: #ffb619;
+  background: #ffffff;
   border-radius: 2px;
 }
 .slides::-webkit-scrollbar-track {

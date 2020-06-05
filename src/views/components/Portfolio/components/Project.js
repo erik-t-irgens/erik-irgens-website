@@ -12,8 +12,8 @@ class ProjectDisplay extends React.Component {
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                width: '20vh',
-                height: '20vh',
+                // width: '20vh',
+                height: '50vh',
                 transition: 'all .5s ease-in-out'
             }
         }
