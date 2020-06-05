@@ -13,7 +13,7 @@ class ProjectDisplay extends React.Component {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 // width: '20vh',
-                height: '50vh',
+                height: '53vh',
                 transition: 'all .5s ease-in-out'
             }
         }
@@ -27,31 +27,31 @@ class ProjectDisplay extends React.Component {
         })
     }
 
-    onClick = () => {
+
+
+    onMouseEnter = () => {
         this.setState({
-            descriptionVisible: !this.state.descriptionVisible,
+            descriptionVisible: true,
 
         })
-        if (!this.state.descriptionVisible) {
-            this.setState({
-                projectStyle: {
-                    ...this.state.projectStyle,
-                    width: '50vh',
-                    height: '50vh',
-                    backgroundImage: null,
-                    backgroundColor: 'gray'
-                }
-            })
-        } else {
-            this.setState({
-                projectStyle: {
-                    ...this.state.projectStyle,
-                    width: '20vh',
-                    height: '20vh',
-                    backgroundImage: `url(${this.props.projectImage})`
-                }
-            })
-        }
+        // if (!this.state.descriptionVisible) {
+        //     this.setState({
+        //         projectStyle: {
+        //             ...this.state.projectStyle,
+
+        //             backgroundImage: null,
+
+        //         }
+        //     })
+        // } else {
+        //     this.setState({
+        //         projectStyle: {
+        //             ...this.state.projectStyle,
+
+        //             backgroundImage: `url(${this.props.projectImage})`
+        //         }
+        //     })
+        // }
     }
 
 
@@ -63,15 +63,15 @@ class ProjectDisplay extends React.Component {
         return (
             <div style={projectStyle}
                 className="project"
-                onClick={this.onClick}>
+                onMouseEnter={this.onMouseEnter}>
                 {descriptionVisible ?
                     <div>
 
 
-                        <h3 className='project-name'>
+                        <h3 className='project-name' style={{ width: '100%' }}>
                             {projectName}
                         </h3>
-                        <h4 className='project-description'>{projectDescription}</h4>
+                        <h4 className='project-description' style={{ width: '80%' }}>{projectDescription}</h4>
                         <GithubButton
 
                             functionality={githubLink}

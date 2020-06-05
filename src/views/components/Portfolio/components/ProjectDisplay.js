@@ -6,6 +6,7 @@ class ProjectDisplay extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            enabled: false,
             visibility: false,
             projectButtonStyle: {
                 display: "inline-block",
@@ -81,6 +82,7 @@ class ProjectDisplay extends React.Component {
 
     onMouseOver = () => {
         this.setState({
+            enabled: true,
             labelStyle: {
                 ...this.state.labelStyle,
                 color: this.props.transitionColor,
@@ -157,6 +159,7 @@ class ProjectDisplay extends React.Component {
                             descriptionVisible={this.state.visibility}
                             projectDescription={this.props.projectDescription}
                             githubLink={this.props.githubLink}
+                            enabled={this.state.enabled}
                         >
                         </Project>
                     </div>
