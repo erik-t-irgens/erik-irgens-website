@@ -59,6 +59,7 @@ class ContactSection extends React.Component {
 
 
 
+
                 <div className="social-button-section" style={socialButtonGridStyle}>
                     <SocialButton
                         functionality={'https://www.facebook.com/erik.irgens'}
