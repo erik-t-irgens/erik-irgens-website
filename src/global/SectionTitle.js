@@ -11,14 +11,14 @@ class SectionTitle extends React.Component {
                 opacity: 1,
                 transform: 'translate(0%, 0%)',
                 color: this.props.color,
-                transition: 'all .8s ease-in-out',
+                transition: 'all .30s ease-in-out',
 
             },
             invisibleStyle: {
                 opacity: 0,
                 transform: this.props.direction,
                 color: 'black',
-                transition: 'all .8s ease-in-out',
+                transition: 'all .30s ease-in-out',
             }
         }
     }
