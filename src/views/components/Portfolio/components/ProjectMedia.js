@@ -54,7 +54,7 @@ class ProjectMedia extends React.Component {
                     mediaType === 'music' ?
                         <div>
 
-                            <iframe title={musicTitle} width="100%" height="166" scrolling="no" frameBorder="no" allow="autoplay" src={this.handleSource()}></iframe><div className="media-player"><a href={soundcloudLink} title={musicTitle} target="_blank" rel="noopener noreferrer" >{musicTitle}</a></div>
+                            <iframe title={musicTitle} className='project-media' scrolling="no" frameBorder="no" allow="autoplay" src={this.handleSource()}></iframe><div className="media-player"><a href={soundcloudLink} title={musicTitle} target="_blank" rel="noopener noreferrer" >{musicTitle}</a></div>
 
                         </div>
 
