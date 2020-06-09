@@ -37,7 +37,7 @@ class MainPage extends React.Component {
         scrollPosition: position
       })
     }
-    console.log("FINAL SCROLL POSITION: " + position, this.state.scrollPosition)
+
   }, 10)
 
 

@@ -47,7 +47,7 @@ class AboutSection extends React.Component {
 
                 <div className="about-section-content-grid">
 
-                    <ImageCarousel visibility={sectionActive}>
+                    <ImageCarousel visibility={sectionActive} id='about-carousel'>
                         <div id="slide-1">
                             Testing Slide 1
                             </div>

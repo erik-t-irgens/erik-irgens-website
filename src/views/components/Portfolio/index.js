@@ -3,6 +3,8 @@ import SectionWrapper from "../../../global/SectionWrapper";
 import SectionTitle from "../../../global/SectionTitle"
 import Button from '../../../global/Button'
 
+
+
 import erikIrgensWebImage from '.././../../Backgrounds/erik-irgens-website-image.PNG'
 import wordVisualizationImage from '.././../../Backgrounds/word-visualizer-image.PNG'
 
@@ -90,23 +92,27 @@ class PortfolioSection extends React.Component {
 
                 <div className='button-selection-grid'>
                     <div onClick={this.handleClickGithub} className='software-portfolio-button'>
-                        <h1 >Software</h1>
-                        <div className={this.handleSoftwareBorder()}></div>
+                        <SectionTitle direction='translate (-10px, 0%)' visibility={sectionActive} color='white' >Software
+                        <div className={this.handleSoftwareBorder()}></div></SectionTitle>
+
                     </div>
                     <div onClick={this.handleClickMusic} className='music-portfolio-button'>
-                        <h1 >Music</h1>
-                        <div className={this.handleMusicBorder()}></div>
+                        <SectionTitle direction='translate (-10px, 0%)' visibility={sectionActive} color='white' >Music
+                             <div className={this.handleMusicBorder()}></div>
+                        </SectionTitle>
+
                     </div>
 
                 </div>
 
-                <ImageCarousel visibility={sectionActive}>
+                <ImageCarousel id='portfolio-carousel' visibility={sectionActive}>
 
                     {/* github projects */}
 
                     {softwareActive ?
                         <>
                             <ProjectDisplay
+
                                 borderColor="white"
                                 labelColor="white" transitionColor="#ff4242"
                                 projectName='Word Visualizer'
@@ -117,6 +123,7 @@ class PortfolioSection extends React.Component {
                             >
                             </ProjectDisplay>
                             <ProjectDisplay
+
                                 borderColor="white"
                                 labelColor="white" transitionColor="#ff4242"
                                 projectName='My Website'
@@ -126,6 +133,7 @@ class PortfolioSection extends React.Component {
                                 githubLink='https://github.com/erik-t-irgens/erik-irgens-website'
                             ></ProjectDisplay>
                             <ProjectDisplay
+
                                 borderColor="white"
                                 labelColor="white" transitionColor="#ff4242"
                                 projectName='Circles'
@@ -138,6 +146,7 @@ class PortfolioSection extends React.Component {
                             </ProjectDisplay>
 
                             <ProjectDisplay
+
                                 borderColor="white"
                                 labelColor="white" transitionColor="#ff4242"
                                 projectName='Pokedex'
@@ -150,6 +159,7 @@ class PortfolioSection extends React.Component {
                             </ProjectDisplay>
 
                             <ProjectDisplay
+
                                 borderColor="white"
                                 labelColor="white" transitionColor="#ff4242"
                                 projectName='Doctor Lookup'
@@ -162,6 +172,7 @@ class PortfolioSection extends React.Component {
                             </ProjectDisplay>
 
                             <ProjectDisplay
+
                                 borderColor="white"
                                 labelColor="white" transitionColor="#ff4242"
                                 projectName='Pizza Delivery'
@@ -171,6 +182,8 @@ class PortfolioSection extends React.Component {
                                 githubLink='https://github.com/erik-t-irgens/pizza-delivery'
                             >
                             </ProjectDisplay>
+
+
                         </>
                         : null}
 
@@ -180,6 +193,7 @@ class PortfolioSection extends React.Component {
                     {musicActive ?
                         <>
                             <ProjectDisplay
+
                                 borderColor="white"
                                 labelColor="white" transitionColor="#ff4242"
                                 projectName='Atmos'
@@ -190,6 +204,7 @@ class PortfolioSection extends React.Component {
                             ></ProjectDisplay>
 
                             <ProjectDisplay
+
                                 borderColor="white"
                                 labelColor="white" transitionColor="#ff4242"
                                 projectName='Nostos'
@@ -199,6 +214,7 @@ class PortfolioSection extends React.Component {
                                 soundcloudLink='https://soundcloud.com/erik-irgens/sets/nostos-erik-irgens-recital'
                             ></ProjectDisplay>
                             <ProjectDisplay
+
                                 borderColor="white"
                                 labelColor="white" transitionColor="#ff4242"
                                 projectName='Dissidentem'
@@ -209,6 +225,7 @@ class PortfolioSection extends React.Component {
                             ></ProjectDisplay>
 
                             <ProjectDisplay
+
                                 borderColor="white"
                                 labelColor="white" transitionColor="#ff4242"
                                 projectName='Somnolent'
@@ -218,6 +235,7 @@ class PortfolioSection extends React.Component {
                                 soundcloudLink='https://soundcloud.com/erik-irgens/somnolent'
                             ></ProjectDisplay>
                             <ProjectDisplay
+
                                 borderColor="white"
                                 labelColor="white" transitionColor="#ff4242"
                                 projectName='Stars'
@@ -227,6 +245,7 @@ class PortfolioSection extends React.Component {
                                 soundcloudLink='https://soundcloud.com/erik-irgens/stars'
                             ></ProjectDisplay>
                             <ProjectDisplay
+
                                 borderColor="white"
                                 labelColor="white" transitionColor="#ff4242"
                                 projectName='Gales'
