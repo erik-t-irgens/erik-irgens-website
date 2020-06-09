@@ -13,7 +13,7 @@ class SectionWrapper extends React.Component {
         backgroundColor: this.props.transitionColor,
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        transition: 'all 1s ease-in-out',
+        transition: 'all .2s ease-in-out',
 
       },
 
@@ -29,7 +29,7 @@ class SectionWrapper extends React.Component {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: 'cover',
-        transition: 'all .5s ease-in-out',
+        transition: 'all .30s ease-in-out',
 
       },
 
@@ -49,7 +49,7 @@ class SectionWrapper extends React.Component {
         width: '100%',
         height: '100%',
         // padding: '24px 34px 22px 34px',
-        transition: 'all .5s ease-in-out',
+        transition: 'all .30s ease-in-out',
       },
       borderLeft: {
         left: '15px',

@@ -9,7 +9,7 @@ class NavButton extends React.Component {
             buttonStyle: {
                 color: 'white',
                 fontSize: '25px',
-                transition: 'all .5s ease-in-out',
+                transition: 'all .15s ease-in-out',
                 position: 'relative',
                 left: '0px',
                 fontFamily: "'Major Mono Display', monospace",
