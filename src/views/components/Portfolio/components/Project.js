@@ -35,13 +35,14 @@ class ProjectDisplay extends React.Component {
         })
     }
 
-    handleClassName = () => {
-        if (this.state.descriptionVisible) {
-            return 'project-content-grid'
-        } else {
-            return 'project-content-grid-hidden'
-        }
-    }
+    // This was used to 'reveal' hidden content within the project. For now, this is deprecated in order for mobile users to always see the content. onMouseOver was confusing for both sets of users.
+    // handleClassName = () => {
+    //     if (this.state.descriptionVisible) {
+    //         return 'project-content-grid'
+    //     } else {
+    //         return 'project-content-grid-hidden'
+    //     }
+    // }
 
 
     render() {
@@ -61,7 +62,9 @@ class ProjectDisplay extends React.Component {
                     </h3>
 
 
-                    <div className={this.handleClassName()}>
+                    <div className='project-content-grid'
+                    // {this.handleClassName()} was used for classname before.
+                    >
                         <div className='project-media'>
                             <ProjectMedia projectMedia={this.props.projectMedia} mediaType={this.props.mediaType}
                                 soundcloudLink={soundcloudLink ? soundcloudLink : null}
