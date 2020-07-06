@@ -22,7 +22,7 @@ class WelcomeSection extends React.Component {
                 color: 'black',
                 position: 'relative',
                 // marginTop: '20vh',
-                marginBottom: '40px',
+                marginBottom: '100px',
                 opacity: 0,
                 // transform: 'translate(0, 100px)',
                 transition: 'all 2s ease-in-out',
@@ -103,7 +103,7 @@ class WelcomeSection extends React.Component {
                 <SectionTitle direction='translate(0, -20px)' visibility={sectionActive} color='white'>Welcome</SectionTitle>
 
                 <div style={paragraphStyle} className="welcome-statement" >
-                    Hi. I'm <span style={spanStyle}>Erik Irgens</span>, and I'm a front-end engineer.
+                    Hi. I'm <span style={spanStyle}>Erik Irgens</span>. <br></br>I'm a software engineer, and composer.
 </div>
                 <div style={buttonStyle}>
                     <ScrollTo alignToTop selector={`#about-section`}>
