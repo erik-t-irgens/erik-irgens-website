@@ -100,6 +100,7 @@ class SocialButton extends React.Component {
             labelStyle: {
                 ...this.state.labelStyle,
                 color: this.props.transitionColor,
+                boxShadow: "2px 2px " + this.props.transitionColor
             },
             buttonBorderBottom: {
                 ...this.state.buttonBorderBottom,
@@ -129,27 +130,28 @@ class SocialButton extends React.Component {
             labelStyle: {
                 ...this.state.labelStyle,
                 color: this.props.labelColor,
+                boxShadow: "0px 0px 0px black"
             },
-            buttonBorderBottom: {
-                ...this.state.buttonBorderBottom,
-                width: 0,
-                backgroundColor: 'white',
-            },
-            buttonBorderTop: {
-                ...this.state.buttonBorderTop,
-                width: 0,
-                backgroundColor: 'white',
-            },
-            buttonBorderLeft: {
-                ...this.state.buttonBorderLeft,
-                height: 0,
-                backgroundColor: 'white',
-            },
-            buttonBorderRight: {
-                ...this.state.buttonBorderRight,
-                height: 0,
-                backgroundColor: 'white',
-            }
+            // buttonBorderBottom: {
+            //     ...this.state.buttonBorderBottom,
+            //     width: 0,
+            //     backgroundColor: 'white',
+            // },
+            // buttonBorderTop: {
+            //     ...this.state.buttonBorderTop,
+            //     width: 0,
+            //     backgroundColor: 'white',
+            // },
+            // buttonBorderLeft: {
+            //     ...this.state.buttonBorderLeft,
+            //     height: 0,
+            //     backgroundColor: 'white',
+            // },
+            // buttonBorderRight: {
+            //     ...this.state.buttonBorderRight,
+            //     height: 0,
+            //     backgroundColor: 'white',
+            // }
         })
     }
 
@@ -169,14 +171,14 @@ class SocialButton extends React.Component {
                 <div className="social-top" style={topLayerStyle} >
 
                     <div className="social-label" style={labelStyle}>{this.props.children}</div>
-
+                    {/* 
                     <div style={buttonBorderLeft} className="social-button-border social-button-border-left" />
 
                     <div style={buttonBorderTop} className="social-button-border social-button-border-top" />
 
                     <div style={buttonBorderRight} className="social-button-border social-button-border-right" />
 
-                    <div style={buttonBorderBottom} className="social-button-border social-button-border-bottom" />
+                    <div style={buttonBorderBottom} className="social-button-border social-button-border-bottom" /> */}
 
                 </div>
 

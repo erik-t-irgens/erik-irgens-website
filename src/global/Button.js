@@ -29,7 +29,7 @@ class Button extends React.Component {
                 height: 0,
                 position: 'absolute',
                 backgroundColor: this.props.transitionColor,
-                transition: 'all .25s ease-out'
+                transition: 'all .2s ease-out'
             },
 
             buttonBorderRight: {
@@ -39,7 +39,7 @@ class Button extends React.Component {
                 height: 0,
                 position: 'absolute',
                 backgroundColor: this.props.transitionColor,
-                transition: 'all .25s ease-out'
+                transition: 'all .2s ease-out'
             },
             buttonBorderTop: {
                 left: '-2px',
@@ -48,7 +48,7 @@ class Button extends React.Component {
                 height: '2px',
                 position: 'absolute',
                 backgroundColor: this.props.transitionColor,
-                transition: 'all .25s ease-out'
+                transition: 'all .2s ease-out'
             },
             buttonBorderBottom: {
                 right: '-2px',
@@ -57,7 +57,7 @@ class Button extends React.Component {
                 height: '2px',
                 position: 'absolute',
                 backgroundColor: this.props.transitionColor,
-                transition: 'all .25s ease-out'
+                transition: 'all .2s ease-out'
             }
 
 

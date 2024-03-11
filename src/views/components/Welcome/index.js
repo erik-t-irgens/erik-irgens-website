@@ -25,13 +25,13 @@ class WelcomeSection extends React.Component {
                 marginBottom: '100px',
                 opacity: 0,
                 // transform: 'translate(0, 100px)',
-                transition: 'all 2s ease-in-out',
+                transition: 'all 1s ease-in-out',
 
             },
             buttonStyle: {
                 opacity: 0,
-                transform: 'translate(0, 50px)',
-                transition: 'all 2s ease-in-out',
+                transform: 'translate(0, 5px)',
+                transition: 'all .2s ease-in-out',
             }
 
 
@@ -39,7 +39,7 @@ class WelcomeSection extends React.Component {
     }
 
     componentDidMount = () => {
-        setTimeout(() => { this.setSectionActive() }, 1000);
+        setTimeout(() => { this.setSectionActive() }, 10);
     }
 
 
@@ -70,7 +70,7 @@ class WelcomeSection extends React.Component {
                     color: "#42f5d1"
                 }
             })
-        }, 1000)
+        }, 100)
 
 
         setTimeout(() => {
@@ -82,7 +82,7 @@ class WelcomeSection extends React.Component {
                     transform: 'translate(0, 0)',
                 }
             })
-        }, 2000)
+        }, 200)
 
     }
 
@@ -104,7 +104,7 @@ class WelcomeSection extends React.Component {
 
                 <div style={paragraphStyle} className="welcome-statement" >
                     Hi. I'm <span style={spanStyle}>Erik Irgens</span>. <br></br>I'm a software engineer, and composer.
-</div>
+                </div>
                 <div style={buttonStyle}>
                     <ScrollTo alignToTop selector={`#about-section`}>
                         <Button borderColor="white" labelColor="white" transitionColor="#42f5d1">Learn More</Button>

@@ -63,7 +63,7 @@ class ImageCarousel extends React.Component {
                 }
 
                 )
-            }, 1000)
+            }, 100)
 
         }
     }

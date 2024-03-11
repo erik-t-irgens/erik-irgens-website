@@ -85,26 +85,26 @@ class ProjectDisplay extends React.Component {
                 ...this.state.labelStyle,
                 color: this.props.transitionColor,
             },
-            projectBorderBottom: {
-                ...this.state.projectBorderBottom,
-                width: 'calc(100% - 2px)',
-                backgroundColor: this.props.transitionColor,
-            },
-            projectBorderTop: {
-                ...this.state.projectBorderTop,
-                width: 'calc(100% - 2px)',
-                backgroundColor: this.props.transitionColor,
-            },
-            projectBorderLeft: {
-                ...this.state.projectBorderLeft,
-                height: 'calc(100% - 2px)',
-                backgroundColor: this.props.transitionColor,
-            },
-            projectBorderRight: {
-                ...this.state.projectBorderRight,
-                height: 'calc(100% - 2px)',
-                backgroundColor: this.props.transitionColor,
-            }
+            // projectBorderBottom: {
+            //     ...this.state.projectBorderBottom,
+            //     width: 'calc(100% - 2px)',
+            //     backgroundColor: this.props.transitionColor,
+            // },
+            // projectBorderTop: {
+            //     ...this.state.projectBorderTop,
+            //     width: 'calc(100% - 2px)',
+            //     backgroundColor: this.props.transitionColor,
+            // },
+            // projectBorderLeft: {
+            //     ...this.state.projectBorderLeft,
+            //     height: 'calc(100% - 2px)',
+            //     backgroundColor: this.props.transitionColor,
+            // },
+            // projectBorderRight: {
+            //     ...this.state.projectBorderRight,
+            //     height: 'calc(100% - 2px)',
+            //     backgroundColor: this.props.transitionColor,
+            // }
         })
     }
 
@@ -116,22 +116,22 @@ class ProjectDisplay extends React.Component {
             },
             projectBorderBottom: {
                 ...this.state.projectBorderBottom,
-                width: 0,
+                // width: 0,
                 backgroundColor: 'white',
             },
             projectBorderTop: {
                 ...this.state.projectBorderTop,
-                width: 0,
+                // width: 0,
                 backgroundColor: 'white',
             },
             projectBorderLeft: {
                 ...this.state.projectBorderLeft,
-                height: 0,
+                // height: 0,
                 backgroundColor: 'white',
             },
             projectBorderRight: {
                 ...this.state.projectBorderRight,
-                height: 0,
+                // height: 0,
                 backgroundColor: 'white',
             }
         })

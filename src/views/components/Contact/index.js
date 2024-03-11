@@ -17,7 +17,7 @@ class ContactSection extends React.Component {
         this.state = {
             sectionActive: false,
             socialButtonGridStyle: {
-                position: 'absolute', bottom: '50px', opacity: 0, left: '50%', transform: 'translate(-50%, -50%)', transition: 'all 2s ease-in-out',
+                position: 'absolute', bottom: '50px', opacity: 0, left: '50%', transform: 'translate(-50%, -50%)', transition: 'all .2s ease-in-out',
             }
         };
     }
@@ -55,8 +55,6 @@ class ContactSection extends React.Component {
                 transitionColor="#80ffa2" color='black'
             >
                 <SectionTitle direction='translate(0, 100px)' visibility={sectionActive} color="white">Contact</SectionTitle>
-                <Button borderColor="white" labelColor="white" transitionColor="#80ffa2">Example</Button>
-
 
 
 

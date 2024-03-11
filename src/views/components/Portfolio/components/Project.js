@@ -12,7 +12,7 @@ class ProjectDisplay extends React.Component {
             projectStyle: {
                 backgroundPosition: 'center',
                 height: '53.8vh',
-                transition: 'all .5s ease-in-out'
+                transition: 'all .1s ease-in-out'
             }
         }
     }

@@ -32,7 +32,7 @@ class SkillSlider extends React.Component {
                 }
 
                 )
-            }, 1000)
+            }, 100)
             setTimeout(() => {
                 this.setState({
                     skillWidth: this.props.width
@@ -40,7 +40,7 @@ class SkillSlider extends React.Component {
 
 
                 )
-            }, 2000)
+            }, 200)
 
 
         }
