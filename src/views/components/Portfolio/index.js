@@ -37,7 +37,7 @@ class PortfolioSection extends React.Component {
     componentWillReceiveProps = () => {
         if (this.props.currentPos >= this.props.minRange && this.props.currentPos < this.props.maxRange && !this.state.sectionActive) {
             this.setSectionActive()
-            console.log("ACTIVATED PORTFOLIO")
+            // console.log("ACTIVATED PORTFOLIO")
         }
 
     }
@@ -93,12 +93,12 @@ class PortfolioSection extends React.Component {
                 <div className='button-selection-grid'>
                     <div onClick={this.handleClickGithub} className='software-portfolio-button'>
                         <SectionTitle direction='translate (-10px, 0%)' visibility={sectionActive} color='white' >Software
-                        <div className={this.handleSoftwareBorder()}></div></SectionTitle>
+                            <div className={this.handleSoftwareBorder()}></div></SectionTitle>
 
                     </div>
                     <div onClick={this.handleClickMusic} className='music-portfolio-button'>
                         <SectionTitle direction='translate (-10px, 0%)' visibility={sectionActive} color='white' >Music
-                             <div className={this.handleMusicBorder()}></div>
+                            <div className={this.handleMusicBorder()}></div>
                         </SectionTitle>
 
                     </div>
@@ -265,8 +265,8 @@ class PortfolioSection extends React.Component {
 
                 </ImageCarousel>
 
-                <ScrollTo alignToTop selector={`#blog-section`}>
-                    <Button borderColor="white" labelColor="white" transitionColor="#ff4242">See My Blog</Button>
+                <ScrollTo alignToTop selector={`#contact-section`}>
+                    <Button borderColor="white" labelColor="white" transitionColor="#ff4242">Contact Me</Button>
                 </ScrollTo>
 
             </SectionWrapper>

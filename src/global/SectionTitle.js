@@ -15,10 +15,10 @@ class SectionTitle extends React.Component {
 
             },
             invisibleStyle: {
-                opacity: 0,
-                transform: this.props.direction,
-                color: 'black',
-                transition: 'all .30s ease-in-out',
+                // opacity: 0,
+                // transform: this.props.direction,
+                // color: 'black',
+                // transition: 'all .30s ease-in-out',
             }
         }
     }

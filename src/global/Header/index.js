@@ -50,7 +50,6 @@ class Header extends React.Component {
                     <NavButton navLocation="about-section" color="#ffb619">About</NavButton>
 
                     <NavButton navLocation="portfolio-section" color="#ff4242">Portfolio</NavButton>
-                    <NavButton navLocation="blog-section" color="#7081ff">Blog</NavButton>
                     <NavButton navLocation="contact-section" color="#80ffa2">Contact</NavButton>
                 </div>
             </div>

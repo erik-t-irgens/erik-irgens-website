@@ -11,7 +11,7 @@ class ProjectDisplay extends React.Component {
             descriptionVisible: false,
             projectStyle: {
                 backgroundPosition: 'center',
-                height: '53.8vh',
+                height: '25vh',
                 transition: 'all .1s ease-in-out'
             }
         }

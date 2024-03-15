@@ -20,7 +20,7 @@ class WelcomeSection extends React.Component {
             },
             paragraphStyle: {
                 color: 'black',
-                position: 'relative',
+                // position: 'relative',
                 // marginTop: '20vh',
                 marginBottom: '100px',
                 opacity: 0,
@@ -30,8 +30,8 @@ class WelcomeSection extends React.Component {
             },
             buttonStyle: {
                 opacity: 0,
-                transform: 'translate(0, 5px)',
-                transition: 'all .2s ease-in-out',
+                // transform: 'translate(0, 5px)',
+                // transition: 'all .2s ease-in-out',
             }
 
 
@@ -47,7 +47,7 @@ class WelcomeSection extends React.Component {
     componentWillReceiveProps = () => {
         if (this.props.currentPos >= this.props.minRange && this.props.currentPos < this.props.maxRange && !this.state.sectionActive) {
             this.setSectionActive()
-            console.log("ACTIVATED WELCOME")
+            // console.log("ACTIVATED WELCOME")
         }
 
     }
