@@ -36,7 +36,7 @@ class SectionWrapper extends React.Component {
       SectionWrapperStyle:
       {
         width: '100%',
-        height: '100vh',
+        height: '90vh',
         transition: 'all 2s ease-out',
       }
       ,
