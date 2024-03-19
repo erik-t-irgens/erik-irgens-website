@@ -266,7 +266,7 @@ class PortfolioSection extends React.Component {
                 </ImageCarousel>
 
                 <ScrollTo alignToTop selector={`#contact-section`}>
-                    <Button borderColor="white" labelColor="white" transitionColor="#ff4242">Contact Me</Button>
+                    <Button className='button' borderColor="white" labelColor="white" transitionColor="#ff4242">Contact Me</Button>
                 </ScrollTo>
 
             </SectionWrapper>

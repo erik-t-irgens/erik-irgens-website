@@ -145,7 +145,8 @@ class ProjectDisplay extends React.Component {
         return (
             <div
 
-                className="button" style={projectButtonStyle}
+
+                style={projectButtonStyle}
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseLeave}>
 

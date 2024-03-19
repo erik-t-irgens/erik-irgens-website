@@ -11,7 +11,8 @@ class ProjectDisplay extends React.Component {
             descriptionVisible: false,
             projectStyle: {
                 backgroundPosition: 'center',
-                height: '25vh',
+                height: '15vh',
+                // position: 'relative',
                 transition: 'all .1s ease-in-out'
             }
         }
@@ -82,14 +83,14 @@ class ProjectDisplay extends React.Component {
                     {githubLink ?
                         <ProjectButton
                             functionality={githubLink}
-                            borderColor="white" labelColor="white"><img className="social-icon-image" style={{ width: '25px', color: 'white' }} src={github} alt="Link to project on github"></img>
+                            borderColor="white" labelColor="white"><img className="social-icon-image" src={github} alt="Link to project on github"></img>
                         </ProjectButton>
                         : null}
 
                     {soundcloudLink ?
                         <ProjectButton
                             functionality={soundcloudLink}
-                            borderColor="white" labelColor="white"><img className="social-icon-image" style={{ width: '25px', color: 'white' }} src={soundcloud} alt="Link to piece on soundcloud"></img>
+                            borderColor="white" labelColor="white"><img className="social-icon-image" src={soundcloud} alt="Link to piece on soundcloud"></img>
                         </ProjectButton>
                         : null}
 

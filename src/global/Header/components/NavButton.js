@@ -5,16 +5,19 @@ class NavButton extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            buttonName: this.props.children.substring(0, 1),
+            buttonName: this.props.children,
             buttonStyle: {
                 color: 'white',
                 fontSize: '25px',
                 // transition: 'all .15s ease-in-out',
-                position: 'relative',
+                position: 'static',
                 left: '0px',
+                top: "20px",
                 fontFamily: "'Major Mono Display', monospace",
                 cursor: 'pointer',
-                boxShadow: '1px 1px 1px black'
+                boxShadow: '1px 1px 1px black',
+                display: "inline-block",
+                margin: '10px'
 
             },
             navLocation: this.props.navLocation
@@ -35,7 +38,7 @@ class NavButton extends React.Component {
 
     onMouseLeave = () => {
         this.setState({
-            buttonName: this.props.children.substring(0, 1),
+            // buttonName: this.props.children.substring(0, 1),
             buttonStyle: {
                 ...this.state.buttonStyle,
                 color: 'white',

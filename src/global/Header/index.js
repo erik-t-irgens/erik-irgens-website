@@ -22,14 +22,16 @@ class Header extends React.Component {
             },
 
             headerStyle: {
-                position: 'fixed',
+                // position: 'fixed',
                 zIndex: 10,
-                left: 0,
+                // left: 0,
+                marginLeft: 'auto',
+                marginRight: 'auto',
                 top: '50%',
-                transform: 'translateY(-50%)',
+                // transform: 'translateY(-50%)',
                 opacity: .8,
                 backgroundColor: 'black',
-                width: '40px',
+                // width: '40px',
             }
         }
 

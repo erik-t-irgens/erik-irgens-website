@@ -13,7 +13,11 @@ class Button extends React.Component {
                 cursor: 'pointer',
                 transition: 'all .05s ease-in-out',
                 left: '50%',
-                transform: 'translateX(-50%)'
+                transform: 'translateX(-50%)',
+                backgroundColor: "transparent",
+                border: "none",
+                padding: "0px",
+                opacity: "1"
             },
             topLayerStyle: {
                 border: "2px solid " + this.props.borderColor,
@@ -148,10 +152,10 @@ class Button extends React.Component {
         const { buttonStyle, topLayerStyle, labelStyle, buttonBorderBottom, buttonBorderLeft, buttonBorderRight, buttonBorderTop } = this.state
 
         return (
-            <div
+            <button
                 onMouseDown={this.onMouseDown}
                 onMouseUp={this.onMouseUp}
-                className="button" style={buttonStyle}
+                className={this.props.className} style={buttonStyle}
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseLeave}>
 
@@ -169,7 +173,7 @@ class Button extends React.Component {
 
                 </div>
 
-            </div>
+            </button>
         );
     }
 }

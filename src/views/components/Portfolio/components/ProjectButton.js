@@ -87,7 +87,7 @@ class ProjectButton extends React.Component {
             <div
                 onMouseDown={this.onMouseDown}
                 onMouseUp={this.onMouseUp}
-                className="button" style={buttonStyle}
+                className="button-project" style={buttonStyle}
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseLeave}>
 

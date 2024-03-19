@@ -86,13 +86,13 @@ class ImageCarousel extends React.Component {
 
                         </div>
                         <div className='carousel-button-group'>
-                            <div>
+                            {/* <div>
                                 <p className="carousel-button carousel-left-button" onClick={this.handleScrollLeftButton}>&#9666;</p>
                             </div>
                             <div  >
                                 <p className="carousel-button carousel-right-button" onClick={this.handleScrollRightButton}>
                                     &#9656;</p>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 

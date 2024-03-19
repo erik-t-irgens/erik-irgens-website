@@ -3,7 +3,8 @@ import SectionWrapper from "../../../global/SectionWrapper";
 import SectionTitle from "../../../global/SectionTitle"
 import ScrollTo from 'react-scroll-into-view'
 import Button from '../../../global/Button'
-
+import erik from "../../../Backgrounds/erik.jpeg"
+import erik_transparent from "../../../Backgrounds/erik_transparent.PNG"
 import Image10 from "../../../Backgrounds/10.jpg"
 
 class WelcomeSection extends React.Component {
@@ -101,15 +102,26 @@ class WelcomeSection extends React.Component {
                 functionality={this.setSectionActive}
                 backgroundImage={Image10} transitionColor="#42f5d1" color="black" >
                 <SectionTitle direction='translate(0, -20px)' visibility={sectionActive} color='white'>Welcome</SectionTitle>
+                {/* 
+                <div className="profile-picture background-profile" style={{
+                    backgroundImage: `url(${erik})`, width: "20vh", height: '20vh', backgroundPosition: "",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: 'cover',
+                }}></div> */}
+                <div className="profile-picture foreground-profile" style={{
+                    backgroundImage: `url(${erik_transparent})`, width: "20vh", height: '20vh', backgroundPosition: "",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: 'cover',
+                }}></div>
 
                 <div style={paragraphStyle} className="welcome-statement" >
                     Hi. I'm <span style={spanStyle}>Erik Irgens</span>. <br></br>I'm a software engineer, and composer.
                 </div>
-                <div style={buttonStyle}>
-                    <ScrollTo alignToTop selector={`#about-section`}>
-                        <Button borderColor="white" labelColor="white" transitionColor="#42f5d1">Learn More</Button>
-                    </ScrollTo>
-                </div>
+                {/* <div style={buttonStyle}> */}
+                <ScrollTo alignToTop selector={`#about-section`}>
+                    <Button className='button' borderColor="white" labelColor="white" transitionColor="#42f5d1">Learn More</Button>
+                </ScrollTo>
+                {/* </div> */}
             </SectionWrapper>
 
         )

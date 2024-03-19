@@ -66,7 +66,7 @@ class AboutSection extends React.Component {
                         </div>
                     </ImageCarousel>
 
-                    <div className="about-skills-column">
+                    {/* <div className="about-skills-column">
                         <SkillSlider animationlength={.1} visibility={sectionActive}
                             backdropcolor="#161616"
                             width="90%"
@@ -111,12 +111,12 @@ class AboutSection extends React.Component {
 
 
 
-                    </div>
+                    </div> */}
 
                 </div>
 
                 <ScrollTo alignToTop selector={`#portfolio-section`}>
-                    <Button borderColor="white" labelColor="white" transitionColor="#ffb619">See my Portfolio</Button></ScrollTo>
+                    <Button className="button" borderColor="white" labelColor="white" transitionColor="#ffb619">See my Portfolio</Button></ScrollTo>
 
 
                 {this.props.children}

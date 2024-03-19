@@ -164,7 +164,7 @@ class SocialButton extends React.Component {
             <div
                 onMouseDown={this.onMouseDown}
                 onMouseUp={this.onMouseUp}
-                className="button" style={buttonStyle}
+                className="button-social" style={buttonStyle}
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseLeave}>
 
