@@ -16,7 +16,7 @@ function LanguagesGraph(props) {
         }
     );
 
-    const [totalLines, setTotalLines] = useState(1)
+    const [totalLines, setTotalLines] = useState({"totalLineCount": 0})
 
     useEffect(() => {
         // debugger;
