@@ -16,7 +16,7 @@ function LanguagesGraph(props) {
         }
     );
 
-    const [totalLines, setTotalLines] = useState(1)
+    const [totalLines, setTotalLines] = useState({"totalLineCount": 0})
 
     useEffect(() => {
         // debugger;
@@ -51,7 +51,7 @@ function LanguagesGraph(props) {
                 <div className='languageList'>
                     {props.gitHubRepoLanguages ? props.gitHubRepoLanguages.map(language =>
                         <>
-                            <p style={{ color: colorObject[language[0]] }}>{language[0]}, {(language[1] / totalLines)}%</p>
+                            <p style={{ color: colorObject[language[0]] }}>{language[0]}, {(Math.round(100 * (language[1] / totalLines.totalLineCount)))}%</p>
                         </>
                     ) : null}
                 </div>
