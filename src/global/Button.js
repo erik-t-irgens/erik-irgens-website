@@ -149,13 +149,14 @@ class Button extends React.Component {
 
     render() {
 
-        const { buttonStyle, topLayerStyle, labelStyle, buttonBorderBottom, buttonBorderLeft, buttonBorderRight, buttonBorderTop } = this.state
+        const { buttonStyle, topLayerStyle, labelStyle, buttonBorderBottom, buttonBorderLeft, buttonBorderRight, buttonBorderTop } = this.state;
+        const { sectionActive } = this.props;
 
         return (
-            <button
+            <button style={sectionActive ? { ...buttonStyle, opacity: "1", transition: 'all 1.5s ease-in-out' } : { ...buttonStyle, opacity: "0", transition: 'all 1.5s ease-in-out', }}
                 onMouseDown={this.onMouseDown}
                 onMouseUp={this.onMouseUp}
-                className={this.props.className} style={buttonStyle}
+                className={this.props.className}
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseLeave}>
 

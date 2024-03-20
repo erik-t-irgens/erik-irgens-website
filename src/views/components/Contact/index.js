@@ -16,6 +16,23 @@ class ContactSection extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            spanStyle: {
+                color: '#80ffa2',
+                // opacity: 1,
+                // transform: 'translate(0, 100px)',
+                textShadow: '2px 2px 2px black'
+
+            },
+            paragraphStyle: {
+                color: 'white',
+                // position: 'relative',
+                // marginTop: '20vh',
+                marginBottom: '100px',
+                opacity: 1,
+                // transform: 'translate(0, 100px)',
+                // transition: 'all 1s ease-in-out',
+
+            },
             sectionActive: false,
             socialButtonGridStyle: {
                 position: 'absolute', bottom: '50px', opacity: 0, left: '50%', transform: 'translate(-50%, -50%)', transition: 'all .2s ease-in-out',
@@ -43,7 +60,7 @@ class ContactSection extends React.Component {
 
     render() {
 
-        const { sectionActive, socialButtonGridStyle } = this.state
+        const { sectionActive, socialButtonGridStyle, paragraphStyle, spanStyle } = this.state
         return (
 
 
@@ -57,7 +74,10 @@ class ContactSection extends React.Component {
             >
                 <SectionTitle direction='translate(0, 100px)' visibility={sectionActive} color="white">Contact</SectionTitle>
 
-                <EmailForm></EmailForm>
+                <div style={sectionActive ? { ...paragraphStyle, opacity: "1", transition: 'all 1.5s ease-in-out' } : { ...paragraphStyle, opacity: "0", transition: 'all 1.5s ease-in-out', }} className="contact-statement" >
+                    I'd <span style={spanStyle}>love</span> to hear from <span style={spanStyle}>you</span>.
+                </div>
+                <EmailForm sectionActive={sectionActive}></EmailForm>
 
 
 

@@ -1,108 +1,71 @@
-import React from "react";
-import github from "../../../../Icons/github.svg"
-import soundcloud from "../../../../Icons/soundcloud.svg"
+import React, { useState, useEffect } from "react";
+import github from "../../../../Icons/github.svg";
+import soundcloud from "../../../../Icons/soundcloud.svg";
 import ProjectButton from "./ProjectButton";
 import ProjectMedia from './ProjectMedia';
 
-class ProjectDisplay extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            descriptionVisible: false,
-            projectStyle: {
-                backgroundPosition: 'center',
-                height: '15vh',
-                // position: 'relative',
-                transition: 'all .1s ease-in-out'
-            }
-        }
-    }
+const ProjectDisplay = (props) => {
+    const [descriptionVisible, setDescriptionVisible] = useState(false);
+    const [projectState, setProjectState] = useState({
+        projectName: '',
+        githubLink: '',
+        soundcloudLink: '',
+        projectDescription: '',
+    });
 
-    componentDidMount = () => {
-        this.setState({
-            projectName: this.props.projectName,
-            githubLink: this.props.githubLink,
-            soundcloudLink: this.props.soundcloudLink,
-            projectDescription: this.props.projectDescription,
-        })
-    }
+    useEffect(() => {
+        setProjectState({
+            projectName: props.projectName,
+            githubLink: props.githubLink,
+            soundcloudLink: props.soundcloudLink,
+            projectDescription: props.projectDescription,
+        });
+    }, []);
 
+    const onMouseEnter = () => {
+        setDescriptionVisible(true);
+    };
 
+    return (
+        <div
+            className="project"
+            onMouseEnter={onMouseEnter}>
 
-    onMouseEnter = () => {
-        this.setState({
-            descriptionVisible: true,
+            <div>
+                <h3 className='project-name' style={{ width: '100%' }}>
+                    {projectState.projectName}
+                </h3>
 
-        })
-    }
-
-    // This was used to 'reveal' hidden content within the project. For now, this is deprecated in order for mobile users to always see the content. onMouseOver was confusing for both sets of users.
-    // handleClassName = () => {
-    //     if (this.state.descriptionVisible) {
-    //         return 'project-content-grid'
-    //     } else {
-    //         return 'project-content-grid-hidden'
-    //     }
-    // }
-
-
-    render() {
-        const { projectName, projectStyle, githubLink, projectDescription, soundcloudLink } = this.state
-
-
-        return (
-            <div style={projectStyle}
-                className="project"
-                onMouseEnter={this.onMouseEnter}>
-
-                <div>
-
-
-                    <h3 className='project-name' style={{ width: '100%' }}>
-                        {projectName}
-                    </h3>
-
-
-                    <div className='project-content-grid'
-                    // {this.handleClassName()} was used for classname before.
-                    >
-                        <div className='project-media'>
-                            <ProjectMedia projectMedia={this.props.projectMedia} mediaType={this.props.mediaType}
-                                soundcloudLink={soundcloudLink ? soundcloudLink : null}
-                            ></ProjectMedia>
-                        </div>
-                        <div className='project-description-column'>
-                            <div className='description-border-left'></div>
-                            <h4 className='project-description'>{projectDescription}</h4>
-                        </div>
-
-
+                <div className='project-content-grid'>
+                    <div className='project-media'>
+                        <ProjectMedia projectMedia={props.projectMedia} mediaType={props.mediaType}
+                            soundcloudLink={projectState.soundcloudLink ? projectState.soundcloudLink : null}
+                        ></ProjectMedia>
                     </div>
-
-
-                    {githubLink ?
-                        <ProjectButton
-                            functionality={githubLink}
-                            borderColor="white" labelColor="white"><img className="social-icon-image" src={github} alt="Link to project on github"></img>
-                        </ProjectButton>
-                        : null}
-
-                    {soundcloudLink ?
-                        <ProjectButton
-                            functionality={soundcloudLink}
-                            borderColor="white" labelColor="white"><img className="social-icon-image" src={soundcloud} alt="Link to piece on soundcloud"></img>
-                        </ProjectButton>
-                        : null}
-
-
+                    <div className='project-description-column'>
+                        <div className='description-border-left'></div>
+                        <h4 className='project-description'>{projectState.projectDescription}</h4>
+                    </div>
                 </div>
 
+                {projectState.githubLink &&
+                    <ProjectButton
+                        functionality={projectState.githubLink}
+                        borderColor="white" labelColor="white">
+                        <img className="social-icon-image" src={github} alt="Link to project on github" />
+                    </ProjectButton>
+                }
 
-
-
+                {projectState.soundcloudLink &&
+                    <ProjectButton
+                        functionality={projectState.soundcloudLink}
+                        borderColor="white" labelColor="white">
+                        <img className="social-icon-image" src={soundcloud} alt="Link to piece on soundcloud" />
+                    </ProjectButton>
+                }
             </div>
-        );
-    }
-}
+        </div>
+    );
+};
 
 export default ProjectDisplay;

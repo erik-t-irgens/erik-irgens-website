@@ -37,6 +37,7 @@ class SectionWrapper extends React.Component {
       {
         width: '100%',
         height: '90vh',
+        // marginTop: "20px",
         // transition: 'all 2s ease-out',
       }
       ,
@@ -48,6 +49,7 @@ class SectionWrapper extends React.Component {
         // transform: 'translateY(-50%)',
         width: '100%',
         height: '100%',
+        // marginTop: "20px"
         // padding: '24px 34px 22px 34px',
         // transition: 'all .30s ease-in-out',
       },
@@ -151,48 +153,50 @@ class SectionWrapper extends React.Component {
   // }
 
   handleFocusSection = () => {
-    this.setState({
-      separatorStyle: {
-        ...this.state.separatorStyle,
-        width: '25%'
-      },
-      faderStyle: {
-        ...this.state.faderStyle,
-        opacity: .1
-      },
-      borderBottom: {
-        ...this.state.borderBottom,
-        width: ' calc(100% - 30px)',
-        backgroundColor: this.props.transitionColor,
-        opacity: 1,
-      },
-      borderTop: {
-        ...this.state.borderTop,
-        width: ' calc(100% - 30px)',
-        backgroundColor: this.props.transitionColor,
-        opacity: 1,
-      },
-      borderLeft: {
-        ...this.state.borderLeft,
-        height: ' calc(100% - 30px)',
-        backgroundColor: this.props.transitionColor,
-        opacity: 1,
-      },
-      borderRight: {
-        ...this.state.borderRight,
-        height: ' calc(100% - 30px)',
-        backgroundColor: this.props.transitionColor,
-        opacity: 1,
+    if (this.state.sectionActive === false) {
+      this.setState({
+        separatorStyle: {
+          ...this.state.separatorStyle,
+          width: '25%'
+        },
+        faderStyle: {
+          ...this.state.faderStyle,
+          opacity: .1
+        },
+        borderBottom: {
+          ...this.state.borderBottom,
+          width: ' calc(100% - 30px)',
+          backgroundColor: this.props.transitionColor,
+          opacity: 1,
+        },
+        borderTop: {
+          ...this.state.borderTop,
+          width: ' calc(100% - 30px)',
+          backgroundColor: this.props.transitionColor,
+          opacity: 1,
+        },
+        borderLeft: {
+          ...this.state.borderLeft,
+          height: ' calc(100% - 30px)',
+          backgroundColor: this.props.transitionColor,
+          opacity: 1,
+        },
+        borderRight: {
+          ...this.state.borderRight,
+          height: ' calc(100% - 30px)',
+          backgroundColor: this.props.transitionColor,
+          opacity: 1,
+        }
+      })
+      if (this.props.functionality) {
+        this.props.functionality()
       }
-    })
-    if (this.props.functionality) {
-      this.props.functionality()
     }
   }
 
   render() {
 
-    const { separatorStyle, faderStyle, borderBottom, borderLeft, borderRight, borderTop, wrapperStyle, SectionWrapperStyle } = this.state
+    const { separatorStyle, faderStyle, borderBottom, borderLeft, borderRight, borderTop, wrapperStyle, SectionWrapperStyle, sectionActive } = this.state
 
     return (
       <div className="border-wrapper" style={wrapperStyle}>
@@ -200,6 +204,7 @@ class SectionWrapper extends React.Component {
           id={this.props.idSet}
           className="section-wrapper"
           style={SectionWrapperStyle}
+
           onMouseEnter={this.handleFocusSection}
 
         // This makes it so a section is de-emphasized -- however, this may not be preferencial.

@@ -43,7 +43,7 @@ class EmailForm extends React.Component {
 
     render() {
         return (
-            <div >
+            <div style={this.props.sectionActive ? { opacity: "1", transition: 'all 1.5s ease-in-out' } : { opacity: "0", transition: 'all 1.5s ease-in-out', }}  >
                 {this.state.messageVisible ? <div style={{ color: "white" }}><p>{this.state.message}</p></div> : null}
 
                 <form id='gform' onSubmit={this.handleSubmit} className="contactForm" method="POST" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeo5vFwawcKfF4dVE9cvw3tyliqurm_ZvA8jaLjTvkdCO79Hg/formResponse">
@@ -56,7 +56,7 @@ class EmailForm extends React.Component {
                     <label for="entry.653361450">Body</label>
                     <textarea name="entry.246720857" rows="4" cols="50" placeholder="Body" required disabled={this.state.messageVisible}></textarea>
 
-                    <Button className='button-contact' style={{ position: "relative", marginBottom: "10vh" }} borderColor="white" labelColor="white" transitionColor="#80ffa2">Submit</Button>
+                    <Button sectionActive={this.props.sectionActive} className='button-contact' style={{ position: "relative", marginBottom: "10vh" }} borderColor="white" labelColor="white" transitionColor="#80ffa2">Submit</Button>
                 </form>
 
             </div >

@@ -23,6 +23,7 @@ import ScrollTo from 'react-scroll-into-view'
 
 
 import Image5 from "../../../Backgrounds/5.jpg"
+import GitHubProject from "./components/GitHubProject";
 
 class PortfolioSection extends React.Component {
     constructor(props) {
@@ -90,7 +91,7 @@ class PortfolioSection extends React.Component {
             >
                 <SectionTitle direction='translate(-100px, 0%)' visibility={sectionActive} color="white">Portfolio</SectionTitle>
 
-                <div className='button-selection-grid'>
+                <div style={sectionActive ? { opacity: "1", transition: 'all 1.5s ease-in-out' } : { opacity: "0", transition: 'all 1.5s ease-in-out', }} className='button-selection-grid'>
                     <div onClick={this.handleClickGithub} className='software-portfolio-button'>
                         <SectionTitle direction='translate (-10px, 0%)' visibility={sectionActive} color='white' >Software
                             <div className={this.handleSoftwareBorder()}></div></SectionTitle>
@@ -109,9 +110,9 @@ class PortfolioSection extends React.Component {
 
                     {/* github projects */}
 
-                    {softwareActive ?
-                        <>
-                            <ProjectDisplay
+
+                    <>
+                        {/* <ProjectDisplay
 
                                 borderColor="white"
                                 labelColor="white" transitionColor="#ff4242"
@@ -181,11 +182,15 @@ class PortfolioSection extends React.Component {
                                 projectDescription='As one of my earlist projects using JavaScript, I decided to focus on design. This project contains flaws - such as a lack of significant media queries - but this represents one of the many examples in which I delved deeper into style and design than the cirriculum made necessary. This project utilizes JavaScript, Node.js, Bootstrap, and jQuery.'
                                 githubLink='https://github.com/erik-t-irgens/pizza-delivery'
                             >
-                            </ProjectDisplay>
+                            </ProjectDisplay> */}
+                        <GitHubProject active={softwareActive} repo="dungeon-dynamics"></GitHubProject>
+                        <GitHubProject active={softwareActive} repo="erik-irgens-website"></GitHubProject>
 
+                        <GitHubProject active={softwareActive} repo="word-visualization"></GitHubProject>
+                        <GitHubProject active={softwareActive} repo="CIRCLES_MVC"></GitHubProject>
+                        <GitHubProject active={softwareActive} repo="CIRCLES_API"></GitHubProject>
+                    </>
 
-                        </>
-                        : null}
 
 
 
@@ -266,7 +271,7 @@ class PortfolioSection extends React.Component {
                 </ImageCarousel>
 
                 <ScrollTo alignToTop selector={`#contact-section`}>
-                    <Button className='button' borderColor="white" labelColor="white" transitionColor="#ff4242">Contact Me</Button>
+                    <Button sectionActive={sectionActive} className='button' borderColor="white" labelColor="white" transitionColor="#ff4242">Contact Me</Button>
                 </ScrollTo>
 
             </SectionWrapper>
