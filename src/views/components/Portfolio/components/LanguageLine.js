@@ -1,14 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import ProjectButton from './ProjectButton';
-import ProjectMedia from './ProjectMedia';
-import github from "../../../../Icons/github.svg";
+import React, { useState } from 'react';
 
 
 function LanguageLine(props) {
 
-
-
-    const [widthNumber, setWidthNumber] = useState()
 
     const [language] = useState(props.language)
 
@@ -17,7 +11,7 @@ function LanguageLine(props) {
             "JavaScript": "#ffb619",
             "C#": "#42f5d1",
             "CSS": "#7081ff",
-            "HTML": "#80ffa2"
+            "HTML": "#7243d1"
         }
     );
 
@@ -27,7 +21,7 @@ function LanguageLine(props) {
         <React.Fragment>
 
 
-            <div className="languagePercentage" style={{ width: widthNumber, backgroundColor: colorObject[language], height: '20px', position: 'relative', display: "block" }}></div>
+            <div className="languagePercentage" style={{ width: props.widthNumber + '%', backgroundColor: colorObject[language] }}></div>
 
         </React.Fragment >
 

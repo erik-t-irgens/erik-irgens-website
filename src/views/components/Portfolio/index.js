@@ -91,7 +91,7 @@ class PortfolioSection extends React.Component {
             >
                 <SectionTitle direction='translate(-100px, 0%)' visibility={sectionActive} color="white">Portfolio</SectionTitle>
 
-                <div className='button-selection-grid'>
+                <div style={sectionActive ? { opacity: "1", transition: 'all 1.5s ease-in-out' } : { opacity: "0", transition: 'all 1.5s ease-in-out', }} className='button-selection-grid'>
                     <div onClick={this.handleClickGithub} className='software-portfolio-button'>
                         <SectionTitle direction='translate (-10px, 0%)' visibility={sectionActive} color='white' >Software
                             <div className={this.handleSoftwareBorder()}></div></SectionTitle>
@@ -183,12 +183,12 @@ class PortfolioSection extends React.Component {
                                 githubLink='https://github.com/erik-t-irgens/pizza-delivery'
                             >
                             </ProjectDisplay> */}
-                        <GitHubProject repo="dungeon-dynamics"></GitHubProject>
-                        <GitHubProject repo="erik-irgens-website"></GitHubProject>
+                        <GitHubProject active={softwareActive} repo="dungeon-dynamics"></GitHubProject>
+                        <GitHubProject active={softwareActive} repo="erik-irgens-website"></GitHubProject>
 
-                        <GitHubProject repo="word-visualization"></GitHubProject>
-                        <GitHubProject repo="CIRCLES_MVC"></GitHubProject>
-                        <GitHubProject repo="CIRCLES_API"></GitHubProject>
+                        <GitHubProject active={softwareActive} repo="word-visualization"></GitHubProject>
+                        <GitHubProject active={softwareActive} repo="CIRCLES_MVC"></GitHubProject>
+                        <GitHubProject active={softwareActive} repo="CIRCLES_API"></GitHubProject>
                     </>
 
 
@@ -271,7 +271,7 @@ class PortfolioSection extends React.Component {
                 </ImageCarousel>
 
                 <ScrollTo alignToTop selector={`#contact-section`}>
-                    <Button className='button' borderColor="white" labelColor="white" transitionColor="#ff4242">Contact Me</Button>
+                    <Button sectionActive={sectionActive} className='button' borderColor="white" labelColor="white" transitionColor="#ff4242">Contact Me</Button>
                 </ScrollTo>
 
             </SectionWrapper>

@@ -43,16 +43,20 @@ class MainPage extends React.Component {
 
   render() {
     return (
-      <div className="main-page-container" >
 
+
+      <div className="main-page-container"  >
         <Header></Header>
         <ScrollSnapView scrollFunction={this.setScrollState}>
+
+
           <WelcomeSection currentPos={this.state.scrollPosition} minRange={-1} maxRange={24} />
           <AboutSection currentPos={this.state.scrollPosition} minRange={24} maxRange={49} />
           <PortfolioSection currentPos={this.state.scrollPosition} minRange={49} maxRange={74} />
           {/* <BlogSection currentPos={this.state.scrollPosition} minRange={74} maxRange={99} /> */}
           <ContactSection currentPos={this.state.scrollPosition} minRange={99} maxRange={100} />
         </ScrollSnapView>
+
       </div>
     );
   }

@@ -37,6 +37,7 @@ class SectionWrapper extends React.Component {
       {
         width: '100%',
         height: '90vh',
+        // marginTop: "20px",
         // transition: 'all 2s ease-out',
       }
       ,
@@ -48,6 +49,7 @@ class SectionWrapper extends React.Component {
         // transform: 'translateY(-50%)',
         width: '100%',
         height: '100%',
+        // marginTop: "20px"
         // padding: '24px 34px 22px 34px',
         // transition: 'all .30s ease-in-out',
       },

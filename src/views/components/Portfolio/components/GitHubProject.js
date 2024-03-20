@@ -19,6 +19,29 @@ function GitHubProject(props) {
         githubUpdated: '',
         projectDescription: ''
     });
+    const [projectBorderTop, setProjectBorderTop] = useState({
+        left: '0px',
+        top: '0px',
+        width: 0,
+        height: '2px',
+        position: 'absolute',
+        backgroundColor: 'white',
+        transition: 'all .25s ease-out',
+    });
+    const [projectBorderBottom, setProjectBorderBottom] = useState({
+        right: '0px',
+        top: '0px',
+        width: 0,
+        height: '2px',
+        position: 'absolute',
+        backgroundColor: 'white',
+        transition: 'all .25s ease-out',
+    });
+    const [labelStyle, setLabelStyle] = useState({
+
+        transition: 'all .15s ease-out',
+        color: "white",
+    });
 
     const renderDate = (dateInput) => {
 
@@ -35,7 +58,42 @@ function GitHubProject(props) {
 
     const onMouseEnter = () => {
         setDescriptionVisible(true);
+        setLabelStyle({
+            ...labelStyle,
+            color: "#ff4240",
+        });
+        setProjectBorderTop({
+            ...projectBorderTop,
+            backgroundColor: "#ff4240",
+            width: 'calc(100% - 2px)',
+        });
+        setProjectBorderBottom({
+            ...projectBorderBottom,
+            backgroundColor: "#ff4240",
+            width: 'calc(100% - 2px)',
+        });
+
     };
+
+    const onMouseLeave = () => {
+        setLabelStyle({
+            ...labelStyle,
+            color: "white",
+        });
+
+        setProjectBorderTop({
+            ...projectBorderTop,
+            backgroundColor: 'white',
+            width: 0,
+        });
+        setProjectBorderBottom({
+            ...projectBorderBottom,
+            backgroundColor: 'white',
+            width: 0,
+        });
+
+    };
+
 
     useEffect(() => {
         fetch(`https://api.github.com/repos/erik-t-irgens/${props.repo}`)
@@ -103,13 +161,14 @@ function GitHubProject(props) {
                 </div> */}
 
 
-                <div
+                <div style={props.active ? { opacity: "1", transition: 'all 1.5s ease-in-out' } : { display: "none", opacity: "0", transition: 'all 1.5s ease-in-out', }}
                     className="project"
-                    onMouseEnter={onMouseEnter}>
+                    onMouseEnter={onMouseEnter}
+                    onMouseLeave={onMouseLeave}>
 
-                    <div>
+                    <div >
 
-                        <h3 className='project-github-name' style={{ width: '100%' }}>
+                        <h3 className='project-github-name' style={{ labelStyle }}>
                             {projectState.projectName}
                         </h3>
                         <div className='project-content-grid'>
@@ -137,7 +196,8 @@ function GitHubProject(props) {
                                 <img className="social-icon-image" src={github} alt="Link to project on github" />
                             </ProjectButton>
                         }
-
+                        <div style={projectBorderTop} className="project-border project-border-top" />
+                        <div style={projectBorderBottom} className="project-border project-border-bottom" />
 
                     </div>
                 </div>

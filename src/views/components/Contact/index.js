@@ -74,10 +74,10 @@ class ContactSection extends React.Component {
             >
                 <SectionTitle direction='translate(0, 100px)' visibility={sectionActive} color="white">Contact</SectionTitle>
 
-                <div style={paragraphStyle} className="contact-statement" >
+                <div style={sectionActive ? { ...paragraphStyle, opacity: "1", transition: 'all 1.5s ease-in-out' } : { ...paragraphStyle, opacity: "0", transition: 'all 1.5s ease-in-out', }} className="contact-statement" >
                     I'd <span style={spanStyle}>love</span> to hear from <span style={spanStyle}>you</span>.
                 </div>
-                <EmailForm></EmailForm>
+                <EmailForm sectionActive={sectionActive}></EmailForm>
 
 
 

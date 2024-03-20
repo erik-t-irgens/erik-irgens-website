@@ -24,7 +24,7 @@ class WelcomeSection extends React.Component {
                 color: 'black',
                 // position: 'relative',
                 // marginTop: '20vh',
-                marginBottom: '100px',
+                // marginBottom: '100px',
                 opacity: 0,
                 // transform: 'translate(0, 100px)',
                 transition: 'all 1.5s ease-in-out',
@@ -102,6 +102,7 @@ class WelcomeSection extends React.Component {
                 idSet="welcome-section"
                 functionality={this.setSectionActive}
                 backgroundImage={Image10} transitionColor="#42f5d1" color="black" >
+
                 <SectionTitle direction='translate(0, -20px)' visibility={sectionActive} color='white'>Welcome</SectionTitle>
                 {/* 
                 <div className="profile-picture background-profile" style={{
@@ -110,21 +111,20 @@ class WelcomeSection extends React.Component {
                     backgroundSize: 'cover',
                 }}></div> */}
 
+                <div style={paragraphStyle} className="erikProfileCard"><div className="welcomePhoto" style={{ backgroundImage: `url(${erik_transparent})` }}></div>
+                    <h3 style={paragraphStyle} className="welcomeContributor">erik irgens</h3>
+                    <h4 className="welcomeRelationship">director of teaching and curriculum at epicodus</h4></div>
 
-                <div className="profile-picture foreground-profile" style={{
-                    backgroundImage: `url(${erik_transparent})`, width: "15vh", height: '15vh', backgroundPosition: "",
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: 'cover',
-                }}></div>
+
 
                 <div style={paragraphStyle} className="welcome-statement" >
-                    Hi. I'm <span style={spanStyle}>Erik Irgens</span>. <br></br>I'm a software engineer, and composer.
+                    Hi. i'm <span style={spanStyle}>erik irgens</span>. <br></br>i'm a software engineer, and composer.
                 </div>
                 {/* <div style={buttonStyle}> */}
                 <ScrollTo alignToTop selector={`#about-section`}>
-                    <Button className='button' borderColor="white" labelColor="white" transitionColor="#42f5d1">Learn More</Button>
+                    <Button sectionActive={sectionActive} className='button' borderColor="white" labelColor="white" transitionColor="#42f5d1">Learn More</Button>
                 </ScrollTo>
-                {/* </div> */}
+
             </SectionWrapper>
 
         )
