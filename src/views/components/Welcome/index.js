@@ -6,6 +6,7 @@ import Button from '../../../global/Button'
 import erik from "../../../Backgrounds/erik.jpeg"
 import erik_transparent from "../../../Backgrounds/erik_transparent.PNG"
 import Image10 from "../../../Backgrounds/10.jpg"
+import GitHubProject from "../Portfolio/components/GitHubProject";
 
 class WelcomeSection extends React.Component {
     constructor(props) {
@@ -26,7 +27,7 @@ class WelcomeSection extends React.Component {
                 marginBottom: '100px',
                 opacity: 0,
                 // transform: 'translate(0, 100px)',
-                transition: 'all 1s ease-in-out',
+                transition: 'all 1.5s ease-in-out',
 
             },
             buttonStyle: {
@@ -108,8 +109,10 @@ class WelcomeSection extends React.Component {
                     backgroundRepeat: "no-repeat",
                     backgroundSize: 'cover',
                 }}></div> */}
+
+
                 <div className="profile-picture foreground-profile" style={{
-                    backgroundImage: `url(${erik_transparent})`, width: "20vh", height: '20vh', backgroundPosition: "",
+                    backgroundImage: `url(${erik_transparent})`, width: "15vh", height: '15vh', backgroundPosition: "",
                     backgroundRepeat: "no-repeat",
                     backgroundSize: 'cover',
                 }}></div>
