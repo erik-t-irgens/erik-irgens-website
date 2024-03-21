@@ -4,7 +4,7 @@
 body {
   background-color: black;
   margin: 0;
-  margin-top: 100px;
+  /* margin-top: 50px; */
   /* padding-bottom: 100px; */
   overflow: hidden;
   /* height: 100% + 50px; */
@@ -614,6 +614,10 @@ code {
 
 /* WELCOME SECTION */
 
+.nav-button {
+  font-size: 15px;
+}
+
 .erikProfileCard {
   /* position: relative; */
   /* display: grid;
@@ -1035,12 +1039,112 @@ position: "relative" */
 
 }
 
-@media only screen and (max-height: 570px) {
+/* Media Queries for Extra Small Devices (Max Width: 320px) */
+@media only screen and (max-width: 320px) {
+  /* Add styles for extra small devices */
+
+}
+
+/* Media Queries for Small Devices (Max Width: 500px) and Small Heights (Max Height: 410px) */
+@media only screen and (max-width: 500px),
+only screen and (max-height: 410px) {
+  .button-label {
+    font-size: 12px;
+  }
+
+  /* Existing styles for small devices */
+  .button-top {
+    padding: .5vh 1vw .5vh 1vw;
+  }
+}
+
+/* Media Queries for Small Tablets and Large Phones (Max Width: 600-700px) */
+@media only screen and (max-width: 600px) {
+
+  /* Add styles for small tablets and large phones */
+  .section-title,
+  .welcome-statement {
+    text-shadow: 2px 2px 2px black;
+  }
+}
+
+/* Media Queries for Medium Devices (Max Width: 700px) and Medium Heights (Max Height: 570px) */
+@media only screen and (max-width: 700px),
+only screen and (max-height: 570px) {
+
+  #welcome-title {
+    margin-top: 50px;
+  }
+
+  .software-portfolio-button,
+  .music-portfolio-button,
+  .visible {
+    height: 25px;
+  }
+
+  .project-content-grid {
+    height: 300px !important;
+  }
+
+  .project-media {
+    transform: translate(-25%);
+  }
+
+  .skillPill {
+    font-size: 10px;
+  }
+
+  .welcomePhoto {
+    width: 90px;
+    height: 90px;
+  }
+
+  .welcome-statement {
+    opacity: 1;
+    font-size: 20px;
+  }
+
+  .welcomeRelationship,
+  .welcomeContributor {
+    /* scale: .75; */
+    /* max-width: 70vw; */
+    font-size: 13px !important;
+    top: 10px;
+
+    /* left: 0; */
+    /* margin: auto auto; */
+  }
+
+  .erikProfileCard {
+    width: 75%;
+  }
+
+  .welcomeRelationship {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-section-content-grid {
+    margin-top: -20px;
+  }
+
+  .button-top {
+    padding: 14px 16px 12px 16px;
+  }
+
+  .button-label {
+    font-weight: 1000;
+    font-size: 8px;
+    line-height: 100%;
+    letter-spacing: 2px;
+  }
+
   .slides {
-    top: 100px;
+    top: 50px;
     position: absolute;
     width: 90vw;
-    /* height: 50vh; */
+    height: 500px;
   }
 
   .project-media,
@@ -1053,195 +1157,120 @@ position: "relative" */
   }
 
   .project-name {
-    font-size: 1em
+    font-size: 1em;
   }
 
   .project {
     height: 48vh !important;
   }
 
-  .skill-name {
-    display: none;
-
-  }
-
-  .skill-title {
-    font-size: 10px;
-  }
-
-  .skill-name-wrapper {
-    display: none;
-  }
-
-
-  .skill-bar {
-
-    display: none;
-
-  }
-
-
-  .skill-slider-wrapper {
-    display: none;
-  }
-
+  .skill-name,
+  .skill-name-wrapper,
+  .skill-bar,
+  .skill-slider-wrapper,
   .invisible-skill-wrapper {
     display: none;
-
-  }
-}
-
-
-@media only screen and (max-width: 700px),
-screen and (max-height: 570px) {
-  .button-selection-grid {
-    margin: 0;
-    padding-top: 0;
-    height: 20px;
-  }
-
-  .music-portfolio-button,
-  .software-portfolio-button {
-    height: 20px;
-  }
-
-
-  .music-portfolio-button .section-title,
-  .software-portfolio-button .section-title {
-    font-size: 1em;
-    height: 20px;
-    transform: translateY(-150%);
-
-  }
-
-  .carousel-button {
-    font-size: 4em;
-    /* transform: translateY(-150px); */
-  }
-
-  .carousel-left-button {
-    left: 70px;
-    opacity: 1;
-
-  }
-
-  .carousel-right-button {
-    right: 70px;
-    opacity: 1;
-
-  }
-
-
-  .skill-name {
-    font-size: 8px;
-    transform: translateY(-80%);
   }
 
   .skill-title {
-    font-size: 15px;
-  }
-
-  .skill-name-wrapper {
-    height: 10px;
-  }
-
-
-
-  .welcome-statement {
-    font-size: 5vw;
-  }
-
-  .button-top {
-    padding: 16px 18px 14px 18px;
-  }
-
-  .button-label {
-
-    font-weight: 600;
     font-size: 10px;
-    line-height: 110%;
-    letter-spacing: 1px;
-    text-align: center;
-    transition: all .15s ease-out;
+  }
+
+  .visible {
+    font-size: 15px;
+    margin-top: 20px;
+
+  }
+
+  .slides {
+    margin-top: -20%;
+  }
+
+  .testimonialContributor,
+
+  .testimonialPhoto,
+  .testimonialRelationship {
+    scale: .7;
+  }
+
+  .testimonialMessage {
+    font-size: 11px;
+    margin-top: 70px;
+    width: 80%;
+    min-height: 50%;
+
+  }
+
+  .testimonialContributor {
+    width: 90vw;
+  }
+
+  .button-project {
+    margin-top: 45px;
+  }
+
+  .skillPill {
+    margin: 10px auto 10px auto;
+    min-width: 50px;
+  }
+
+  .project-description {
+    font-size: 11px;
+  }
+
+  .project-name {
+    font-size: 20px
+  }
+
+  .contact-statement {
+    font-size: 15px !important;
+    margin-top: -100px;
+  }
+
+  .contactForm {
+    padding: 0;
+    padding-bottom: 0;
+    margin-top: 100px !important;
+    /* display: none; */
+
+  }
+
+  input {
+    min-height: 20px;
+  }
+
+  .button-contact {
+    bottom: 200px;
+  }
+
+  .social-button-selection {
+    width: 80vw !important;
+    margin: auto auto auto auto;
   }
 }
 
-@media only screen and (max-height: 650px) {
-  .carousel-button {
-    font-size: 3em;
-    transform: translateY(-100px);
-  }
-
-  .welcome-statement {
-    font-weight: 900;
-    font-size: 4vw;
-  }
-
-  .button-top {
-    padding: 2vh 2vw 2vh 2vw;
-  }
+/* Media Queries for Large Tablets and Small Laptops (Max Width: 1024px) */
+@media only screen and (max-width: 1024px) {
+  /* Add styles for large tablets and small laptops */
 }
 
-@media only screen and (max-height: 420px) {
-
-  .about-section-content-grid {
-    margin-top: -20px;
-  }
-
-  .button-top {
-    padding: 14px 16px 12px 16px;
-  }
-
-  .button-label {
-
-    font-weight: 400;
-    font-size: 8px;
-    line-height: 100%;
-    letter-spacing: 1px;
-  }
+/* Media Queries for Large Devices (Laptops and Desktops) */
+@media only screen and (min-width: 1025px) {
+  /* Add styles for laptops and desktops */
 }
 
-
-
-@media only screen and (max-height: 420px) {
-
-  .about-section-content-grid {
-    margin-top: -20px;
-  }
-
-  .button-top {
-    padding: 14px 16px 12px 16px;
-  }
-
-  .button-label {
-
-    font-weight: 1000;
-    font-size: 8px;
-    line-height: 100%;
-    letter-spacing: 2px;
-  }
+/* Media Queries for Extra Large Devices (Large Monitors, Min Width: 1200px) */
+@media only screen and (min-width: 1200px) {
+  /* Add styles for extra large monitors */
 }
 
-
-@media only screen and (max-width: 500px),
-screen and (max-height: 410px) {
-
-  .section-title,
-  .welcome-statement {
-    text-shadow: 2px 2px 2px black;
-  }
-
-
-
+/* Orientation-Specific Queries */
+@media only screen and (orientation: landscape) {
+  /* Add styles for landscape orientation */
 }
 
-@media only screen and (max-height: 406px) {
-
-  .button-top {
-    padding: .5vh 1vw .5vh 1vw;
-  }
-
-
+@media only screen and (orientation: portrait) {
+  /* Add styles for portrait orientation */
 }
 
 /* FORMS */

@@ -8,7 +8,7 @@ class NavButton extends React.Component {
             buttonName: this.props.children,
             buttonStyle: {
                 color: 'white',
-                fontSize: '25px',
+                // fontSize: '25px',
                 // transition: 'all .15s ease-in-out',
                 position: 'static',
                 left: '0px',

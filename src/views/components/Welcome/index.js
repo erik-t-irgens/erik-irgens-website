@@ -103,7 +103,7 @@ class WelcomeSection extends React.Component {
                 functionality={this.setSectionActive}
                 backgroundImage={Image10} transitionColor="#42f5d1" color="black" >
 
-                <SectionTitle direction='translate(0, -20px)' visibility={sectionActive} color='white'>Welcome</SectionTitle>
+                <SectionTitle direction='translate(0, -20px)' visibility={sectionActive} id={"welcome-title"} color='white'>Welcome</SectionTitle>
                 {/* 
                 <div className="profile-picture background-profile" style={{
                     backgroundImage: `url(${erik})`, width: "20vh", height: '20vh', backgroundPosition: "",

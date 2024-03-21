@@ -105,7 +105,7 @@ function GitHubProject(props) {
                 }
             })
             .then((jsonifiedResponse) => {
-                console.log(jsonifiedResponse)
+
                 setGitHubRepo(jsonifiedResponse)
                 setProjectState({
                     projectName: jsonifiedResponse.name,
@@ -123,7 +123,7 @@ function GitHubProject(props) {
                         }
                     })
                     .then((jsonifiedResponseLanguages) => {
-                        console.log(jsonifiedResponseLanguages)
+
                         setGitHubRepoLanguages(Object.entries(jsonifiedResponseLanguages))
                         setIsLoaded(true)
 

@@ -35,7 +35,7 @@ class SectionTitle extends React.Component {
         const { titleVisible, visibleStyle, invisibleStyle } = this.state
         return (
 
-            <div className="section-title">
+            <div id={this.props.id} className="section-title">
                 {titleVisible
                     ?
 
