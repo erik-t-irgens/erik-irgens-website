@@ -1,21 +1,24 @@
 export const skillGroups = [
   {
-    title: 'Languages',
-    items: ['JavaScript', 'C#/.NET', 'HTML', 'CSS', 'SQL', 'bash'],
-  },
-  {
-    title: 'Technologies',
+    // Placeholder group for the Lakeside role: prune to what you actually do.
+    title: 'Operations',
     items: [
-      'React', 'Redux', 'Vite', 'webpack', 'Jest', 'MSTest', 'NPM', 'jQuery',
-      'ASP.NET Core', 'Identity', 'EF Core', 'MySQL', 'Firebase', 'AWS', 'Git', 'GitHub',
+      'Device management', 'Identity & accounts', 'Networking', 'Classroom AV',
+      'Help desk & support', 'Vendor management', 'Documentation & training', 'Automation & scripting',
     ],
   },
   {
-    title: 'Skills',
+    title: 'Engineering',
     items: [
-      'RESTful APIs', 'CI/CD', 'Unit Testing', 'Object-oriented programming',
-      'Test-driven development', 'Behavior-driven development', 'Data structures & algorithms',
-      'Technical writing', 'Documentation', 'Program management', 'Product management', 'People management',
+      'JavaScript', 'React', 'Node.js', 'C#/.NET', 'ASP.NET Core', 'SQL', 'HTML & CSS',
+      'REST APIs', 'Testing (Jest, MSTest)', 'CI/CD', 'Git & GitHub', 'AWS', 'bash',
+    ],
+  },
+  {
+    title: 'Leadership',
+    items: [
+      'Curriculum design', 'Teaching & mentoring', 'People management', 'Program management',
+      'Product management', 'Technical writing', 'Stakeholder communication',
     ],
   },
 ]

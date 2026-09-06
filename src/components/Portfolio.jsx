@@ -4,7 +4,7 @@ import Button from './Button.jsx'
 import Tabs from './Tabs.jsx'
 import Carousel from './Carousel.jsx'
 import { useGitHubRepo } from '../hooks/useGitHubRepo.js'
-import { projects, languageColor } from '../data/projects.js'
+import { featured, more, githubProfile, languageColor } from '../data/projects.js'
 import { pieces, embedUrl } from '../data/music.js'
 import githubIcon from '../assets/icons/github.svg'
 import soundcloudIcon from '../assets/icons/soundcloud.svg'
@@ -63,6 +63,33 @@ function ProjectCard({ project }) {
   )
 }
 
+function FeatureCard({ project }) {
+  const repo = useGitHubRepo(project.name, project)
+  return (
+    <article className="feature" style={{ '--tint': project.tint }}>
+      <div className="feature__cover" aria-hidden="true">
+        {project.image ? <img src={project.image} alt="" loading="lazy" /> : <span className="feature__glyph">{project.glyph}</span>}
+      </div>
+      <div className="feature__body">
+        <p className="eyebrow">{project.kind}</p>
+        <h3 className="feature__title">{project.title}</h3>
+        <p className="feature__blurb">{repo.description}</p>
+        <LanguageBar languages={repo.languages} live={repo.live} />
+        <div className="feature__links">
+          {project.liveUrl && (
+            <a className="text-link" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+              visit
+            </a>
+          )}
+          <a className="icon-link" href={repo.url} target="_blank" rel="noopener noreferrer" aria-label={`${project.title} on GitHub`}>
+            <img src={githubIcon} alt="" />
+          </a>
+        </div>
+      </div>
+    </article>
+  )
+}
+
 function MusicCard({ piece }) {
   return (
     <article className="card">
@@ -88,8 +115,19 @@ export default function Portfolio() {
 
       {tab === 'software' && (
         <div className="panel" role="tabpanel" id="panel-software" aria-labelledby="tab-software">
-          <Carousel label="Software projects">
-            {projects.map((p) => (
+          <div className="featured">
+            {featured.map((p) => (
+              <FeatureCard project={p} key={p.name} />
+            ))}
+          </div>
+          <p className="subhead">
+            more on{' '}
+            <a className="text-link" href={githubProfile} target="_blank" rel="noopener noreferrer">
+              github
+            </a>
+          </p>
+          <Carousel label="More projects">
+            {more.map((p) => (
               <ProjectCard project={p} key={p.name} />
             ))}
           </Carousel>

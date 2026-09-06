@@ -1,44 +1,75 @@
-// Static fallback data for the software portfolio. Live description, language
-// breakdown and last-push date are fetched from GitHub at runtime when the
-// unauthenticated API rate limit allows; these values are what visitors see
-// otherwise, so keep them accurate.
+// Software portfolio.
+//
+// `featured` entries get a large card with a typographic cover; give one an
+// `image` (imported from src/assets) to show a screenshot instead, and a
+// `liveUrl` to add a "visit" link. Bracketed text is a placeholder.
+//
+// `more` entries are compact cards. For every entry the live description,
+// language breakdown and last-push date are fetched from GitHub at runtime
+// when the unauthenticated API rate limit allows; the text here is what
+// visitors see otherwise.
 const OWNER = 'erik-t-irgens'
+const repoUrl = (name) => `https://github.com/${OWNER}/${name}`
 
-export const projects = [
+export const featured = [
   {
-    name: 'dungeon-dynamics',
-    description: 'A dungeon-crawler project. See the repository for details.',
-    url: `https://github.com/${OWNER}/dungeon-dynamics`,
+    name: 'interactive-book-project',
+    title: 'Interactive book',
+    kind: 'Website',
+    tint: 'var(--amber)',
+    glyph: 'Bk',
+    description: '[placeholder: one or two sentences about the book site: what the book is, who it is for, and what the site lets a reader do.]',
+    url: repoUrl('interactive-book-project'),
+    liveUrl: null,
+    languages: [],
+  },
+  {
+    name: 'anamnesis-audio',
+    title: 'Anamnesis audio',
+    kind: 'Audio',
+    tint: 'var(--teal)',
+    glyph: 'An',
+    description: '[placeholder: what this audio project is and why you made it.]',
+    url: repoUrl('anamnesis-audio'),
+    liveUrl: null,
     languages: [],
   },
   {
     name: 'erik-irgens-website',
+    title: 'This site',
+    kind: 'Website',
+    tint: 'var(--blue)',
+    glyph: 'ei',
     description:
-      'The code behind this site. A React portfolio built from scratch without a third-party UI framework: sections, buttons, carousels and the reveal animations are all hand-written.',
-    url: `https://github.com/${OWNER}/erik-irgens-website`,
+      'The site you are reading. Rebuilt in 2026 on Vite and React with hand-written components and no UI framework; the first version dates from 2019.',
+    url: repoUrl('erik-irgens-website'),
+    liveUrl: 'https://erikirgens.com/',
     languages: [['JavaScript', 1], ['CSS', 1], ['HTML', 1]],
   },
+]
+
+export const more = [
+  { name: 'word-game', description: 'A word game. Details load from GitHub.', url: repoUrl('word-game'), languages: [] },
+  { name: 'sushi-night', description: 'Details load from GitHub.', url: repoUrl('sushi-night'), languages: [] },
+  { name: 'metric-maker', description: 'Details load from GitHub.', url: repoUrl('metric-maker'), languages: [] },
   {
     name: 'word-visualization',
     description:
-      "Displays information about a user-provided term. The term is compared against the DataMuse repository, then its synonyms, antonyms, related words and rhymes are ranked and explored through interactive node graphs built with Sigma.js, React-vis and Semantic-UI. Grew out of data-visualization contract work at Wheelhouse DMG.",
-    url: `https://github.com/${OWNER}/word-visualization`,
+      'Explores a term through its synonyms, antonyms, related words and rhymes from DataMuse, ranked and drawn as interactive node graphs with Sigma.js and React-vis.',
+    url: repoUrl('word-visualization'),
     languages: [['JavaScript', 1], ['CSS', 1], ['HTML', 1]],
   },
+  { name: 'dungeon-dynamics', description: 'A dungeon-crawler project. Details load from GitHub.', url: repoUrl('dungeon-dynamics'), languages: [] },
   {
     name: 'CIRCLES_MVC',
     description:
-      'A collaborative mock social-media site built in one week with C#/.NET, ASP.NET Core with Identity, MVC, SQL and a companion API. Users authenticate, then create and modify "circles" of other users with shared interests to meet up and enjoy events together.',
-    url: `https://github.com/${OWNER}/CIRCLES_MVC`,
+      'A mock social network built in a week with ASP.NET Core, Identity, MVC and SQL: users create "circles" of people with shared interests.',
+    url: repoUrl('CIRCLES_MVC'),
     languages: [['C#', 1], ['HTML', 1], ['CSS', 1]],
   },
-  {
-    name: 'CIRCLES_API',
-    description: 'The ASP.NET Core Web API that backs the Circles project.',
-    url: `https://github.com/${OWNER}/CIRCLES_API`,
-    languages: [['C#', 1]],
-  },
 ]
+
+export const githubProfile = `https://github.com/${OWNER}`
 
 export const languageColors = {
   JavaScript: '#ffb619',

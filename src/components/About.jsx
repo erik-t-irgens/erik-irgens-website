@@ -4,6 +4,7 @@ import Button from './Button.jsx'
 import Tabs from './Tabs.jsx'
 import Carousel from './Carousel.jsx'
 import { skillGroups } from '../data/skills.js'
+import { profile } from '../data/profile.js'
 import { testimonials } from '../data/testimonials.js'
 import linkedinIcon from '../assets/icons/linkedin.svg'
 import bgLarge from '../assets/bg-about.webp'
@@ -52,6 +53,12 @@ export default function About() {
   const [tab, setTab] = useState('skills')
   return (
     <Section id="about" title="About" accent="var(--amber)" bgLarge={bgLarge} bgSmall={bgSmall}>
+      <div className="bio">
+        {profile.bio.map((p, i) => (
+          <p key={i}>{p}</p>
+        ))}
+      </div>
+
       <Tabs tabs={tabs} value={tab} onChange={setTab} label="About me" />
 
       {tab === 'skills' && (
