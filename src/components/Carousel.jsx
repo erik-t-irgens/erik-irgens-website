@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 
-// Horizontal, scroll-snapping list. Swipe or scroll natively; the buttons
-// nudge one card at a time for mouse and keyboard users.
+// Horizontal, scroll-snapping list. Swipe or scroll natively; the buttons and
+// the arrow keys (when the track is focused) nudge one card at a time.
 export default function Carousel({ label, children }) {
   const track = useRef(null)
 
@@ -14,12 +14,17 @@ export default function Carousel({ label, children }) {
     el.scrollBy({ left: dir * distance, behavior: 'smooth' })
   }
 
+  const onKeyDown = (e) => {
+    if (e.key === 'ArrowRight') { e.preventDefault(); step(1) }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1) }
+  }
+
   return (
     <div className="carousel">
       <button type="button" className="carousel__btn carousel__btn--prev" aria-label="Previous" onClick={() => step(-1)}>
         ‹
       </button>
-      <div className="carousel__track" ref={track} role="region" aria-label={label} tabIndex={0}>
+      <div className="carousel__track" ref={track} role="region" aria-label={label} tabIndex={0} onKeyDown={onKeyDown}>
         {children}
       </div>
       <button type="button" className="carousel__btn carousel__btn--next" aria-label="Next" onClick={() => step(1)}>

@@ -8,8 +8,9 @@ import Footer from './components/Footer.jsx'
 export default function App() {
   return (
     <>
+      <a className="skip-link" href="#main">Skip to content</a>
       <Header />
-      <main>
+      <main id="main">
         <Welcome />
         <About />
         <Portfolio />

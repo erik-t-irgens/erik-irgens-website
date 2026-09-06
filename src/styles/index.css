@@ -50,6 +50,22 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .accent { color: var(--accent); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
+/* ---------- skip link ---------- */
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -3rem;
+  z-index: 30;
+  padding: 0.5rem 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--teal);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: top 0.15s;
+}
+.skip-link:focus { top: 0.5rem; }
+
 /* ---------- header ---------- */
 .site-header {
   position: fixed;
@@ -72,12 +88,26 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   gap: clamp(0.75rem, 3vw, 2rem);
 }
 .site-header a {
+  position: relative;
   font-family: var(--font-display);
   font-size: clamp(0.9rem, 2.6vw, 1.25rem);
   text-decoration: none;
   padding: 0.4rem 0.2rem;
   transition: color 0.15s, text-shadow 0.15s;
 }
+.site-header a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  transform: translateX(-50%);
+  background: var(--accent);
+  transition: width 0.25s var(--ease);
+}
+.site-header a.is-current { color: var(--accent); }
+.site-header a.is-current::after { width: 100%; }
 .site-header a:hover,
 .site-header a:focus-visible {
   color: var(--accent);
